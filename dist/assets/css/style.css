@@ -2012,10 +2012,6 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
   }
-  .border-t-4 {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 4px;
-  }
   .border-t-\[6px\] {
     border-top-style: var(--tw-border-style);
     border-top-width: 6px;
@@ -2078,9 +2074,6 @@
   .dark .apexcharts-ycrosshairs {
     stroke: var(--color-default) !important;
   }
-  .border-blue-500 {
-    border-color: var(--color-blue-500);
-  }
   .border-brand {
     border-color: var(--color-brand);
   }
@@ -2101,9 +2094,6 @@
   }
   .border-gray-300 {
     border-color: var(--color-gray-300);
-  }
-  .border-green-500 {
-    border-color: var(--color-green-500);
   }
   .border-heading {
     border-color: var(--color-heading);
@@ -2660,10 +2650,6 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .font-extrabold {
-    --tw-font-weight: var(--font-weight-extrabold);
-    font-weight: var(--font-weight-extrabold);
-  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -2735,9 +2721,6 @@
   }
   .text-gray-900 {
     color: var(--color-gray-900);
-  }
-  .text-green-600 {
-    color: var(--color-green-600);
   }
   .text-heading {
     color: var(--color-heading);

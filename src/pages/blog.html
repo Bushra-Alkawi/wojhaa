@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body class="bushra-custom-page">
 
     <header class="w-full bg-card-bg border-b border-card-tint shadow-sm sticky top-0 z-50" dir="rtl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +86,7 @@
                 <h1 class="text-heading text-4xl font-bold  mb-5 ">المدونة</h1>
                 <p class="mb-5 font-bold text-heading text-2xl">
                     دليلك الشامل لرحلات طريق ذكية وممتعة
-                <div class="flex justify-center md:justify-start text-xl text-muted">
+                <div class="flex justify-center md:justify-start text-xl text-text">
                     اكتشف أحدث النصائح
                     حول اختيار السيارة المناسبة لسفرك، وكيفية التخطيط لرحلات
                     القيادة الطويلة بأقل تكلفة وأعلى كفاءة. في موقع
@@ -110,40 +110,41 @@
 
                 <!-- main-post start -->
                 <div class="main-post right-origin max-w-7xl mx-auto grid md:grid-cols-2 grid-cols-1
-                            items-center p-7 md:p-0 shadow-xl border border-gray-100 rounded-[10px]
+                            items-center p-7 md:p-0 shadow-xl border border-gray-100 rounded-2xl
                               bg-card-bg">
                     <div class="blog-info p-[20px] relative">
-                        <div class="absolute md:top-[-45px] md:right-[8px]
+                        <div class="absolute md:top-[2px] md:right-[10px]
                         top-[-20px] right-[-20px]
-                             bg-primary px-2 py-1 rounded-md text-white">
+                             bg-primary px-2 py-1 rounded-2xl text-white">
                             نصائح القيادة</div>
-                        <h2 class="text-2xl font-bold leading-9 text-heading">أفضل 10 طرق لرحلة برية ممتعة إلى الساحل
+                        <h2 class="text-2xl font-bold leading-9 text-heading md:mt-5 mt-3">أفضل 10 طرق لرحلة برية ممتعة إلى الساحل
                         </h2>
-                        <p class="my-3 text-muted">
+                        <p class="md:my-10 my-3 text-text">
                             اكتشف أجمل الطرق والمناظر الطبيعية على طول الساحل، مع نصائح مهمة لرحلتك بالسيارة بأمان ومتعة
                         </p>
-                        <div class="flex items-center justify-around mt-10 text-muted">
+                        <div class="flex gap-4 items-center justify-around md:mt-20 text-muted">
                             <div class="flex gap-3 items-center">
                                 <img class="object-cover rounded-full shadow-xl border border-gray-100 "
                                     src="../../dist/assets/images/blog/authors/ahmad.jpg" alt="">
-                                <h3>أحمد حمدان</h3>
+                                <h3 class="md:text-sm text-xs">أحمد حمدان</h3>
 
                             </div>
                             <div>
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>16 آب 2026</span>
+                                <span class="md:text-sm text-xs">16 آب 2026</span>
 
                             </div>
                         </div>
                     </div>
                     <div class="relative">
                         <div
-                            class="absolute bottom-[10px] left-[10px] bg-primary hover:bg-primary-hover px-2 py-1 rounded-md text-white flex gap-2 items-center cursor-pointer">
+                            class="absolute bottom-[10px] 
+                            left-[10px] bg-primary hover:bg-primary-hover px-2 py-1 rounded-2xl text-white flex gap-2 items-center cursor-pointer">
                             <span>اقرأ المزيد</span>
                             <i class="fa-solid fa-arrow-left"></i>
                         </div>
 
-                        <img class="rounded-[10px] overflow-hidden"
+                        <img class="rounded-2xl overflow-hidden"
                             src="../../dist/assets/images/blog/posts/main-post.jpg" alt="">
                     </div>
                 </div>
@@ -162,29 +163,30 @@
 
                     <div class="swiper blog-swiper max-w-7xl mx-auto md:mr-5">
                         <div class=" swiper-wrapper posts-8 h-full">
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
-                                    صيانة السيارات</div>
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <span
+                        class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">صيانة السيارات</span>
+                  
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
                                         src="../../dist/assets/images/blog/posts/maintanace.jpg" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         أهم علامات تلف السيارة وكيفية التعامل معها
                                     </h3>
-                                    <p class="text-muted ">
+                                    <p class="text-text text-sm ">
                                         تعرف على أبرز العلامات التي تدل على وجود مشاكل في سيارتك وكيفية التعامل معها
                                         بشكل صحيح.
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8">
-                                        <div class="flex items-center gap-2">
+                                        <div class="flex items-center gap-1 ">
                                             <img class="object-cover rounded-full shadow-xl"
                                                 src="../../dist/assets/images/blog/authors/sarah.jfif"
                                                 style="height: 50px; width: 50px;" alt="">
@@ -193,7 +195,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
                                             <span class="">22 تموز 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>1.2k</span>
@@ -205,31 +207,32 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover  
+                                         text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
                             </div>
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">
                                     السيارات الكهربائية</div>
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
                                         src="../../dist/assets/images/blog/posts/electric-cars.jpg" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         مستقبل السيارات الكهربائية في عالم النقل
                                     </h3>
-                                    <p class="text-muted ">
+                                    <p class="text-text text-sm ">
                                         تعرف على أبرز التطورات في عالم السيارات الكهربائية وكيف ستغير مستقبل النقل
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8 ">
                                         <div class="flex items-center gap-2">
                                             <img class="object-cover rounded-full shadow-xl"
@@ -240,8 +243,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
-                                            <span class="">2 كانون الأول 2025</span>
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
+                                            <span class="">2 شباط 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>1.5k</span>
                                                 <i class="fa-regular fa-eye"></i>
@@ -252,32 +255,33 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover
+                                           text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
                             </div>
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">
                                     تأجير السيارات</div>
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
-                                        src="../../dist/assets/images/blog/posts/car-renting.jpg" alt="">
+                                        src="../../dist/assets/images/blog/posts/choice.jpg" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         كيفية اختيار السيارة المناسبة لاحتياجاتك
                                     </h3>
-                                    <p class="text-muted ">
+                                    <p class="text-text text-sm ">
                                         دليل شامل لمساعدتك في اختيار السيارة المثالية لرحلتك، سواء كنت تسافر بمفردك أو
                                         مع عائلتك
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8">
                                         <div class="flex items-center gap-2">
                                             <img class="object-cover rounded-full shadow-xl"
@@ -288,7 +292,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
                                             <span class="">15 أيلول 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>65</span>
@@ -300,31 +304,31 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
                             </div>
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">
                                     وجهات السفر</div>
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
                                         src="../../dist/assets/images/blog/posts/10-wijhats.jpg" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         أفضل عشر وجهات سياحية في سوريا لاستئجار سيارة
                                     </h3>
-                                    <p class="text-muted ">
+                                    <p class="text-text text-sm ">
                                         استكشف أجمل الوجهات السياحية التي يمكنك زيارتها بحرية واستقلال عن طريق السيارة
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8">
                                         <div class="flex items-center gap-2">
                                             <img class="object-cover rounded-full shadow-xl"
@@ -335,7 +339,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
                                             <span class="">15 آب 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>245</span>
@@ -347,31 +351,31 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
                             </div>
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">
                                     نصائح القيادة</div>
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
                                         src="../../dist/assets/images/blog/posts/car-renting.jpg" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         5 نصائح هامة قبل استئجار السيارة في الخارج
                                     </h3>
-                                    <p class="text-muted ">
+                                    <p class="text-text text-sm ">
                                         تعرف على أهم النصائح التي تساعدك في اختيار السيارة بشكل آمن وسهل.
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8">
                                         <div class="flex items-center gap-2">
                                             <img class="object-cover rounded-full shadow-xl"
@@ -382,7 +386,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
                                             <span class="">1 أيلول 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>245</span>
@@ -394,31 +398,31 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
                             </div>
-                            <div class="post swiper-slide h-auto flex flex-col bg-card-bg rounded-md overflow-hidden
-                transition-transform duration-300 hover:scale-[1.01] hover:border-indigo-500 ">
-                                <div class="absolute top-1.25 right-1.25 bg-primary  px-2 py-1 rounded-md text-white">
+                            <div class="post swiper-slide bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-lg border border-card-tint dark:border-zinc-800 flex flex-col justify-between relative group hover:shadow-xl transition-all duration-300"
+                    data-category="tips guides ">
+                                <div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full shadow z-10">
                                     السفر والرحلات</div>
                                 <div class="post-img w-full h-50 flex-shrink-0">
                                     <img class="w-full h-full object-cover rounded-[10px]"
                                         src="../../dist/assets/images/blog/posts/kasab.jfif" alt="">
                                 </div>
                                 <div class="post-info p-2 flex-1 flex flex-col justify-between">
-                                    <h3 class="md:text-lg text-md font-bold
+                                    <h3 class="text-md font-bold
                                          text-heading my-3 ">
 
                                         رحلة إلى كسب: أفضل الأنشطة والأماكن السياحية
                                     </h3>
-                                    <p class="text-muted">
+                                    <p class="text-text text-sm">
                                         اكتشف أجمل الأماكن السياحية في كسب مع نصائح لرحلة لا تنسى
                                     </p>
 
-                                    <div class="auth flex md:flex-row flex-col gap-3 justify-around items-start
-                                     md:items-center text-xl 
+                                    <div class="auth flex  gap-3 justify-around items-start
+                                     md:items-center text-sm 
                                     text-muted mt-8">
                                         <div class="flex items-center gap-2">
                                             <img class="object-cover rounded-full shadow-xl"
@@ -429,7 +433,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex flex-col text-[15px] gap-1 ps-2">
+                                        <div class="flex flex-col text-sm gap-1 ps-2">
                                             <span class="">15 حزيران 2026</span>
                                             <div class="flex justify-start gap-1 items-center">
                                                 <span>132</span>
@@ -441,7 +445,7 @@
                                         </div>
                                     </div>
                                     <a href="single-post.html"
-                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-xl px-5 py-3 mt-3 w-full rounded-md">اقرأ
+                                        class="flex justify-center bg-primary hover:bg-primary-hover   text-white text-sm px-5 py-3 mt-3 w-full rounded-2xl">اقرأ
                                         المزيد</a>
                                 </div>
 
@@ -491,38 +495,40 @@
                 <div class="bg-card-bg  p-1 rounded-[10px]">
                     <div class="categories mt-5 pr-3">
                         <a href="">
-                            <h3 class="text-xl text-text  font-medium mb-3">تأجير السيارات</h3>
+                            <h3 class="text-xl text-text  font-medium mb-3 hover:text-heading">تأجير السيارات</h3>
                         </a>
                         <a href="">
-                            <h3 class="text-xl text-text font-medium mb-3">صيانة السيارات
+                            <h3 class="text-xl text-text font-medium mb-3 hover:text-heading">صيانة السيارات
                             </h3>
                         </a>
                         <a href="">
-                            <h3 class="text-xl text-text font-medium mb-3">نصائح القيادة</h3>
+                            <h3 class="text-xl text-text font-medium mb-3 hover:text-heading">نصائح القيادة</h3>
                         </a>
                         <a href="">
-                            <h3 class="text-xl text-text font-medium mb-3">وجهات السفر
+                            <h3 class="text-xl text-text font-medium mb-3 hover:text-heading">وجهات السفر
                             </h3>
                         </a>
                         <a href="">
-                            <h3 class="text-xl text-text font-medium mb-3">السيارات الكهربائية
+                            <h3 class="text-xl text-text font-medium mb-3 hover:text-heading">السيارات الكهربائية
                                 الهجينة</h3>
                         </a>
                         <a href="">
-                            <h3 class="text-xl text-text font-medium mb-3">السفر والرحلات</h3>
+                            <h3 class="text-xl text-text font-medium mb-3 hover:text-heading">السفر والرحلات</h3>
                         </a>
 
                     </div>
                 </div>
 
                 <h2 class="text-2xl font-bold text-heading pt-10 pb-3 pr-3">المقالات الأكثر قراءة</h2>
-                <div class="all-categories bg-card-bg text-text rounded-[10px] p-1">
+                <div class="all-categories bg-card-bg  rounded-[10px] p-1">
                     <div class="categories rounded-[20px] mt-5 px-3">
                         <div
-                            class="cursor-pointer hover:text-heading transition-all duration-300 flex justify-between gap-3 items-center my-3">
+                            class="cursor-pointer hover:text-heading transition-all 
+                            duration-300 flex justify-between gap-3 items-center my-3">
                             <div>
-                                <h2 class="font-bold">حقيبة طوارئ السيارة: ماذا يجب أن تحتوي قبل انطلاق رحلتك؟</h2>
-                                <div class="flex justify-between">
+                                <h2 class="font-bold text-text">
+                                    حقيبة طوارئ السيارة: ماذا يجب أن تحتوي قبل انطلاق رحلتك؟</h2>
+                                <div class="flex justify-between text-muted">
                                     <span> أيلول / 2023</span>
                                     <div class="flex justify-start gap-1 items-center">
                                         <span>45k</span>
@@ -539,8 +545,8 @@
                         <div
                             class="cursor-pointer hover:text-heading transition-all duration-300 flex justify-between gap-3 items-center my-3">
                             <div>
-                                <h2 class="font-bold">كيف توفر في استهلاك الوقود أثناء السفر لمسافات طويلة؟</h2>
-                                <div class="flex justify-between">
+                                <h2 class="font-bold text-text">كيف توفر في استهلاك الوقود أثناء السفر لمسافات طويلة؟</h2>
+                                <div class="flex justify-between text-muted">
                                     <span> شباط / 2024</span>
                                     <div class="flex justify-start gap-1 items-center">
                                         <span>39k</span>
@@ -557,8 +563,8 @@
                         <div
                             class="cursor-pointer hover:text-heading transition-all duration-300 flex justify-between gap-3 items-center my-3">
                             <div>
-                                <h2 class="font-bold">كل ما تريد معرفته عن استخراج رخصة القيادة الدولية قبل السفر</h2>
-                                <div class="flex justify-between">
+                                <h2 class="font-bold text-text">كل ما تريد معرفته عن استخراج رخصة القيادة الدولية قبل السفر</h2>
+                                <div class="flex justify-between text-muted">
                                     <span> حزيران / 2025</span>
                                     <div class="flex justify-start gap-1 items-center">
                                         <span>29k</span>
@@ -575,9 +581,9 @@
                         <div
                             class="cursor-pointer hover:text-heading transition-all duration-300 flex justify-between gap-3 items-center my-3">
                             <div>
-                                <h2 class="font-bold">مقارنة بين استئجار سيارة أو استخدام النقل العام في رحلتك
+                                <h2 class="font-bold text-text">مقارنة بين استئجار سيارة أو استخدام النقل العام في رحلتك
                                 </h2>
-                                <div class="flex justify-between">
+                                <div class="flex justify-between text-muted">
                                     <span> أيار / 2026</span>
                                     <div class="flex justify-start gap-1 items-center">
                                         <span>13k</span>

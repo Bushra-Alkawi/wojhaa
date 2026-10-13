@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body class="">
+<body class="bushra-custom-page">
 
     <header class="w-full bg-card-bg border-b border-card-tint shadow-sm sticky top-0 z-50" dir="rtl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,7 +161,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 grid-cols-1 md:gap-x-20 gap-y-3 items-center md:px-6 px-0">
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fas fa-calendar-alt"></i>
                             <span>تاريخ الاستلام</span>
                         </label>
@@ -188,12 +188,13 @@
 
                             <!-- حقل التاريخ الفعلي مخفي ومزود بـ ID لاستدعائه عند نقر الـ div أو الأيقونة -->
                             <input id="receipt-date-input" type="text" placeholder="يوم / شهر / سنة" dir="rtl"
-                                onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="
+                                onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
+                                 onchange="
       if(this.value) {
         const d = new Date(this.value);
         document.getElementById('receipt-date-display').innerText = `${String(d.getDate()).padStart(2,'0')} / ${String(d.getMonth()+1).padStart(2,'0')} / ${d.getFullYear()}`;
         document.getElementById('receipt-date-display').classList.remove('text-muted');
-        document.getElementById('receipt-date-display').classList.add('text-muted');
+        document.getElementById('receipt-date-display').classList.add('text-text');
       } else {
         document.getElementById('receipt-date-display').innerText = 'يوم / شهر / سنة';
         document.getElementById('receipt-date-display').classList.add('text-muted');
@@ -205,7 +206,7 @@
 
 
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fas fa-calendar-alt"></i>
                             <span>تاريخ التسليم</span>
                         </label>
@@ -235,7 +236,7 @@
         const d = new Date(this.value);
         document.getElementById('return-date-display').innerText = `${String(d.getDate()).padStart(2,'0')} / ${String(d.getMonth()+1).padStart(2,'0')} / ${d.getFullYear()}`;
         document.getElementById('return-date-display').classList.remove('text-muted');
-        document.getElementById('return-date-display').classList.add('text-muted');
+        document.getElementById('return-date-display').classList.add('text-text');
       } else {
         document.getElementById('return-date-display').innerText = 'يوم / شهر / سنة';
         document.getElementById('return-date-display').classList.add('text-muted');
@@ -245,12 +246,12 @@
                     </div>
 
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid fa-clock"></i>
                             <span>وقت الاستلام</span>
                         </label>
                         <div onclick="document.getElementById('receipt-time-input').focus(); document.getElementById('receipt-time-input').showPicker();"
-                            class="relative w-full py-2.5 bg-white border border-default-medium text-heading text-sm rounded-base focus-within:ring-2 focus-within:ring-heading px-3
+                            class="relative w-full py-2.5 bg-white border border-default-medium text-text text-sm rounded-base focus-within:ring-2 focus-within:ring-heading px-3
                              shadow-md flex items-center justify-between cursor-pointer min-h-[42px]">
                             <!-- أيقونة الساعة المخصصة في أقصى اليسار -->
                             <div class="text-heading order-2 pointer-events-none">
@@ -263,7 +264,7 @@
 
                             <!-- نص الوقت المستقر في أقصى اليمين (يعرض الصيغة العربية المخصصة) -->
                             <span id="receipt-time-display"
-                                class="text-heading order-1 text-right w-full select-none pointer-events-none">
+                                class="text-muted order-1 text-right w-full select-none pointer-events-none">
                                 00:00
                             </span>
 
@@ -281,7 +282,7 @@
         
         document.getElementById('receipt-time-display').innerText = `${formattedHours}:${minutes} ${period}`;
         document.getElementById('receipt-time-display').classList.remove('text-heading');
-        document.getElementById('receipt-time-display').classList.add('text-heading');
+        document.getElementById('receipt-time-display').classList.add('text-text');
       } else {
         document.getElementById('receipt-time-display').innerText = '00:00';
         document.getElementById('receipt-time-display').classList.add('text-heading');
@@ -291,12 +292,12 @@
 
                     </div>
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid fa-clock"></i>
                             <span>وقت التسليم</span>
                         </label>
                         <div onclick="document.getElementById('return-time-input').focus(); document.getElementById('return-time-input').showPicker();"
-                            class="relative w-full py-2.5 bg-white border border-default-medium text-heading text-sm rounded-base focus-within:ring-2 focus-within:ring-heading px-3 shadow-md flex items-center justify-between cursor-pointer min-h-[42px]">
+                            class="relative w-full py-2.5 bg-white border border-default-medium text-text text-sm rounded-base focus-within:ring-2 focus-within:ring-heading px-3 shadow-md flex items-center justify-between cursor-pointer min-h-[42px]">
                             <!-- أيقونة الساعة المخصصة في أقصى اليسار -->
                             <div class="text-heading order-2 pointer-events-none">
                                 <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -308,7 +309,7 @@
 
                             <!-- نص الوقت المستقر في أقصى اليمين (يعرض الصيغة العربية المخصصة) -->
                             <span id="return-time-display"
-                                class="text-heading order-1 text-right w-full select-none pointer-events-none">
+                                class="text-muted order-1 text-right w-full select-none pointer-events-none">
                                 00:00
                             </span>
 
@@ -325,17 +326,17 @@
         let formattedHours = String(hours).padStart(2, '0');
         
         document.getElementById('return-time-display').innerText = `${formattedHours}:${minutes} ${period}`;
-        document.getElementById('return-time-display').classList.remove('text-heading');
-        document.getElementById('return-time-display').classList.add('text-heading');
+        document.getElementById('return-time-display').classList.remove('text-muted');
+        document.getElementById('return-time-display').classList.add('text-text');
       } else {
         document.getElementById('return-time-display').innerText = '00:00';
-        document.getElementById('return-time-display').classList.add('text-heading');
+        document.getElementById('return-time-display').classList.add('text-text-text');
       }
     " class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                         </div>
                     </div>
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>مكان الاستلام</span>
                         </label>
@@ -357,7 +358,7 @@
 
 
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold text-text mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>مكان التسليم</span>
                         </label>
@@ -400,7 +401,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 grid-cols-1 md:gap-x-20 gap-y-3 items-center md:px-6 px-0">
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold فثء mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid fa-user"></i>
                             <span>الاسم الكامل</span>
                         </label>
@@ -411,7 +412,7 @@
                                   ">
                     </div>
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold فثء mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-regular fas fa-phone"></i>
                             <span>الهاتف</span>
                         </label>
@@ -422,7 +423,7 @@
                                   ">
                     </div>
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold فثء mb-2 flex gap-2 items-center ps-1">
                             <i class="fa-solid far fa-envelope"></i>
                             <span>البريد الإلكتروني</span>
                         </label>
@@ -433,7 +434,7 @@
                                   ">
                     </div>
                     <div>
-                        <label class="text-md font-bold text-heading mb-2 flex gap-2 items-center ps-1">
+                        <label class="text-md font-bold فثء mb-2 flex gap-2 items-center ps-1">
                             <i class="fas fa-id-card"></i>
                             <span>رقم رخصة القيادة</span>
                         </label>
@@ -481,9 +482,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col items-center">
-                                <i class="fa-solid fas fa-chair text-text text-5xl mb-2"></i>
-                                <h3 class="text-lg font-bold text-text  mb-2.5">مقعد أطفال</h3>
-                                <p class=" "> $10/ يوم </p>
+                                <i class="fa-solid fas fa-chair text-heading text-5xl mb-2"></i>
+                                <h3 class="text-lg font-bold text-heading  mb-2.5">مقعد أطفال</h3>
+                                <p class="text-text"> $10/ يوم </p>
                             </div>
                         </div>
                     </label>
@@ -505,9 +506,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col items-center">
-                                <i class="fa-regular fa-user text-text text-5xl mb-2"></i>
-                                <h3 class="text-lg font-bold text-text  mb-2.5">سائق إضافي</h3>
-                                <p class=" "> $15/ يوم </p>
+                                <i class="fa-regular fa-user text-heading text-5xl mb-2"></i>
+                                <h3 class="text-lg font-bold text-heading  mb-2.5">سائق إضافي</h3>
+                                <p class="text-text"> $15/ يوم </p>
                             </div>
                         </div>
                     </label>
@@ -529,9 +530,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col items-center">
-                                <i class="fa-solid fa-shield-halved text-text text-5xl mb-2"></i>
-                                <h3 class="text-lg font-bold text-text  mb-2.5">تأمين إضافي</h3>
-                                <p class=" "> $20/ يوم </p>
+                                <i class="fa-solid fa-shield-halved text-heading text-5xl mb-2"></i>
+                                <h3 class="text-lg font-bold text-heading  mb-2.5">تأمين إضافي</h3>
+                                <p class="text-text"> $20/ يوم </p>
                             </div>
                         </div>
                     </label>
@@ -553,9 +554,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col items-center">
-                                <i class="fa-regular fas fa-map-marked-alt text-text text-5xl mb-2"></i>
-                                <h3 class="text-lg font-bold text-text  mb-2.5">تسليم في موقع مختلف</h3>
-                                <p class=" "> $15/ يوم </p>
+                                <i class="fa-regular fas fa-map-marked-alt text-heading text-5xl mb-2"></i>
+                                <h3 class="text-lg font-bold text-heading  mb-2.5">تسليم في موقع مختلف</h3>
+                                <p class="text-text"> $15/ يوم </p>
                             </div>
                         </div>
                     </label>
@@ -579,9 +580,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col items-center">
-                                <i class="fa-solid fa-location-dot text-text text-5xl mb-2"></i>
-                                <h3 class="text-lg font-bold text-text  mb-2.5">GPS</h3>
-                                <p class=" "> $8/ يوم </p>
+                                <i class="fa-solid fa-location-dot text-heading text-5xl mb-2"></i>
+                                <h3 class="text-lg font-bold text-heading  mb-2.5">GPS</h3>
+                                <p class="text-text"> $8/ يوم </p>
                             </div>
                         </div>
                     </label>
@@ -615,19 +616,19 @@
 
 
                     <div class="flex justify-between">
-                        <p class="text-lg">مقعد اطفال</p>
-                        <p class="text-muted">$10</p>
+                        <p class="text-lg text-text">مقعد اطفال</p>
+                        <p class="text-text">$10</p>
                     </div>
 
                     <div class="flex justify-between">
-                        <p class="text-lg">تأمين إضافي</p>
-                        <p class="text-muted">$20</p>
+                        <p class="text-lg  text-text">تأمين إضافي</p>
+                        <p class="text-text">$20</p>
                     </div>
 
                     <hr class="my-3 text-card-tint">
                     <div class="flex justify-between">
-                        <p class="md:text-2xl text-xl font-bold mb-4 text-heading">المجموع</p>
-                        <p class="md:text-2xl text-xl mb-4 text-muted">$330</p>
+                        <p class="md:text-2xl text-xl font-bold mb-4 text-text">المجموع</p>
+                        <p class="md:text-2xl text-xl mb-4 text-text">$330</p>
                     </div>
                 </div>
             </div>
@@ -666,10 +667,10 @@
 
                             <div class="flex items-center justify-between">
                                 <div class="">
-                                    <h3 class="md:text-xl text-lg font-bold text-text mb-1">الدفع عند الاستلام</h3>
-                                    <p class=""> الدفع عند استلام السيارة </p>
+                                    <h3 class="md:text-xl text-lg font-bold text-heading mb-1">الدفع عند الاستلام</h3>
+                                    <p class="text-text"> الدفع عند استلام السيارة </p>
                                 </div>
-                                <i class="fas fa-money-bill-wave text-text md:text-4xl text-3xl mb-2"></i>
+                                <i class="fas fa-money-bill-wave text-heading md:text-4xl text-3xl mb-2"></i>
                             </div>
                         </div>
                     </label>
@@ -691,10 +692,10 @@
 
                             <div class="flex items-center justify-between">
                                 <div class="">
-                                    <h3 class="md:text-xl text-lg font-bold text-text mb-1">بطاقة بنكية</h3>
-                                    <p class=""> Visa / MasterCard </p>
+                                    <h3 class="md:text-xl text-lg font-bold text-heading mb-1">بطاقة بنكية</h3>
+                                    <p class="text-text"> Visa / MasterCard </p>
                                 </div>
-                                <i class="fas fa-credit-card text-text md:text-4xl  text-3xl mb-2"></i>
+                                <i class="fas fa-credit-card text-heading md:text-4xl  text-3xl mb-2"></i>
                             </div>
                         </div>
                     </label>
@@ -716,10 +717,10 @@
 
                             <div class="flex items-center justify-between">
                                 <div class="">
-                                    <h3 class="md:text-xl text-lg font-bold text-text mb-1">دفع الكتروني</h3>
-                                    <p class=""> Apple Pay / PayPal </p>
+                                    <h3 class="md:text-xl text-lg font-bold text-heading mb-1">دفع الكتروني</h3>
+                                    <p class="text-text"> Apple Pay / PayPal </p>
                                 </div>
-                                <i class="fa-regular fas fa-mobile-alt text-text text-4xl mb-2"></i>
+                                <i class="fa-regular fas fa-mobile-alt text-heading text-4xl mb-2"></i>
                             </div>
                         </div>
                     </label>
@@ -763,7 +764,7 @@
     <div id="location-modal-1"
         class="hidden fixed inset-0 z-50 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 text-right">
-            <h3 class="text-lg font-bold text-heading mb-4">موقع الاستلام</h3>
+            <h3 class="text-lg font-bold text-text mb-4">موقع الاستلام</h3>
 
             <!-- استبدلنا الـ iframe بـ div فارغ وحجزنا له طولاً مناسباً -->
             <div id="map-parent-1" class="w-full h-72 rounded-lg">
@@ -777,7 +778,7 @@
 
             <!-- الحقل النصي اليدوي الاحتياطي (الجديد) -->
             <div class="mt-4">
-                <label class="block text-xs font-bold text-heading mb-1">تفاصيل العنوان:</label>
+                <label class="block text-xs font-bold text-text mb-1">تفاصيل العنوان:</label>
                 <input type="text" id="manual-address-input-1" placeholder="اكتب اسم الحي أو تفاصيل إضافية هنا..."
                     class="w-full border border-gray-300 rounded-base px-3 py-2 text-sm focus:outline-none focus:border-heading focus:ring-1 focus:ring-heading transition-all">
             </div>
@@ -800,7 +801,7 @@
     <div id="location-modal-2"
         class="hidden fixed inset-0 z-50 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 text-right">
-            <h3 class="text-lg font-bold text-heading mb-4">موقع التسليم</h3>
+            <h3 class="text-lg font-bold text-text mb-4">موقع التسليم</h3>
 
             <!-- الأب الحاضن الفريد للمودال الثاني -->
             <div id="map-parent-2" class="w-full h-72 rounded-lg">
@@ -809,7 +810,7 @@
             <p class="text-xs text-gray-500 mt-2" id="coords-preview-2">الموقع الحالي: لم يتم التحديد بعد</p>
             <!-- الحقل النصي اليدوي الاحتياطي (الجديد) -->
             <div class="mt-4">
-                <label class="block text-xs font-bold text-heading mb-2">تفاصيل العنوان:</label>
+                <label class="block text-xs font-bold text-text mb-2">تفاصيل العنوان:</label>
                 <input type="text" id="manual-address-input-2" placeholder="اكتب اسم الحي أو تفاصيل إضافية هنا..."
                     class="w-full border border-gray-300 rounded-base px-3 py-2 text-sm focus:outline-none focus:border-heading focus:ring-1 focus:ring-heading transition-all">
             </div>

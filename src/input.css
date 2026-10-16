@@ -17,10 +17,48 @@
   /* --- العناوين والنصوص --- */
   --color-heading: #480707;        /* لون العناوين الرئيسية الغامق */
   --color-text: #851717;           /* لون النصوص والفقرات الفرعية */
-  --color-muted: #A01414;          /* النصوص الخافتة أو الثانوية */
+  --color-muted: rgb(59,59,59);          /* النصوص الخافتة أو الثانوية */
 
   /* --- الكاردات والخلفيات --- */
   --color-card-bg: #FFFFFF;        /* خلفية الكاردات البيضاء */
   --color-card-tint: #FFF1F1;      /* خلفية الكاردات الملونة أو التفعيل */
   --color-bg-main: #FAFAFA;        /* خلفية الموقع العامة */
+}
+
+
+
+
+.bushra-custom-page {
+  font-family: var(--font-heading) !important; /* يجبر الـ body الخاص بصفحتك على أخذ هذا الخط */
+}
+
+.bushra-custom-page h1, 
+.bushra-custom-page h2 {
+  font-family: var(--font-sans) !important; /* يلغي تأثير الخط المشترك على عناوينك ويطبق خطك */
+}
+
+.nav-link:hover  {
+  font-weight: bold; 
+  transition: all 0.3s;
+}
+
+.nav-link.active {
+  font-weight: bold; 
+}
+
+
+
+.my-class:hover {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 10px ; */
+  color: white;
+  
+}
+
+.my-class.active {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 10px ; */
+  color: white;
 }

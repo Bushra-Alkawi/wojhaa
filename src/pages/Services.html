@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا المميزة - تأجير السيارات</title>
+ 
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../dist/assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="./dist/assets/images/image.png">
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FAFAFA] text-gray-800 font-sans">
+
+    <!--Header -->
+
+    <header class="w-full bg-card-bg border-b border-card-tint shadow-sm sticky top-0 z-50" dir="rtl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- 1. الشعار (Logo) -->
+                <div class="flex items-center gap-3">
+
+                    <a href="#" class="flex items-center">
+                        <img src="../../dist/assets/images/logo.png" alt="شعار وجهة" class="w-10 h-10  ">
+                    </a>
+                </div>
+
+                <!-- 2. روابط التنقل (Navigation Links) -->
+                <nav class="hidden md:flex items-center gap-8 font-sans">
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الرئيسية</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الخدمات</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">من نحن</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الخدمات</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الحجز</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">كيف نعمل</a>
+                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">اتصل بنا</a>
+                </nav>
+
+                <!-- 3. أزرار الإجراءات (Actions & Auth) -->
+                <div class="flex items-center gap-4 font-sans">
+                    <!-- زر تسجيل الدخول -->
+                    <a href="Login.html"
+                        class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-heading hover:text-primary transition-colors">
+                        تسجيل الدخول
+                    </a>
+
+                    <!-- زر إنشاء حساب -->
+                    <a href="signup.html"
+                        class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-xl shadow-sm transition-all duration-200">
+                        حساب جديد
+                    </a>
+
+                    <!-- زر القائمة للجوال (Mobile Menu Toggle) -->
+                    <button type="button"
+                        class="md:hidden p-2 rounded-lg text-heading hover:bg-card-tint focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Title -->
+
+    <section class="relative  isolate overflow-hidden bg-[#FFFFFF] py-12 md:py-[140px]">
+        <!-- Background image -->
+        <div class="absolute inset-0 -z-20 bg-center bg-cover "
+            style="background-image: url('../../dist/assets/images/Services/img-title.jpg'); ">
+        </div>
+
+
+        <!-- Premium dark overlay -->
+        <div class="absolute inset-0 -z-10 bg-white/15"></div>
+
+
+        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-w/80 via-gray-200/40 to-black/80"></div>
+
+        <!-- Decorative glow -->
+        <div
+            class="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-[50px]">
+        </div>
+
+
+        <div class="mx-auto flex max-w-7xl items-center justify-center px-5 sm:px-8">
+            <div class="text-center">
+
+
+                <h2 class="text-3xl md:text-5xl font-bold font-heading  tracking-tight text-[#480707]  drop-shadow-2xl
+            ">
+                    مرحباً بك في <span class="text-[#E61C1C] ">خدماتنا المميزة</span>
+                </h2>
+
+                <div class="mx-auto mt-6 flex items-center justify-center gap-3">
+                    <span class="h-px w-10 bg-white/40"></span>
+
+                    <span class="h-2 w-2 rounded-full bg-white"></span>
+
+                    <span class="h-px w-10 bg-white/40"></span>
+                </div>
+
+                <p
+                    class="hidden md:flex mx-auto mt-6 w-fit bg-gray-100/60 p-2  py-1 text-center rounded-tr-lg rounded-bl-lg  text-sm md:text-base font-semibold font-heading leading-7 text-[#851717] ">
+                    نوفر لك أفضل خدمات تأجير السيارات بأعلى مستوى من الجودة والراحة
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Bottom fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0b0d10] to-transparent"></div>
+    </section>
+
+
+    <!-- Why Our-Services -->
+
+    <section class="relative py-10 mt-8 overflow-hidden bg-white">
+
+        <!-- زخارف خلفية ناعمة -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-[#F93A3A]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#480707]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Title -->
+            <div class="text-center mb-14">
+
+
+
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-[#480707]">
+                    لماذا تختار
+                    <span class="text-[#851717]">خدماتنا؟</span>
+                </h2>
+
+                <p class="max-w-2xl mx-auto mt-5 text-sm md:text-base font-semibold
+                      leading-7 text-[#A01414]">
+                    نقدّم لك تجربة تأجير سيارات مميزة تجمع بين الجودة والراحة والموثوقية،
+                    مع مجموعة متنوعة من السيارات وخدمة احترافية تلبي احتياجاتك
+                    وتمنحك رحلة آمنة ومريحة.
+                </p>
+
+            </div>
+
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+
+
+                <!-- 1-->
+                <div class="group relative">
+
+                    <div class="relative h-3/4 overflow-hidden rounded-2xl
+                            bg-white border-l-2 border-[#F93A3A]/35
+                            px-6 py-8 text-center
+                            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                            transition-all duration-500
+                            hover:-translate-y-3
+                            hover:border-[#F93A3A]/30
+                            hover:shadow-[0_20px_45px_rgba(249,58,58,0.12)]">
+
+                        <!-- خط hover -->
+                        <div class="absolute top-0 right-0 w-full h-[3px]
+                                bg-gradient-to-l from-[#F93A3A] to-transparent
+                                scale-x-0 origin-right
+                                group-hover:scale-x-100
+                                transition-transform duration-500">
+                        </div>
+
+
+                        <span class="absolute top-5 left-5
+                                 text-[10px] font-bold
+                                 text-[#F93A3A]/50
+                                 group-hover:text-[#F93A3A]
+                                 transition-colors duration-500">
+                            01
+                        </span>
+
+                        <!-- icon -->
+                        <div class="relative w-16 h-16 mx-auto mb-6">
+
+                            <div class="absolute inset-0 rounded-full
+                                    border border-[#F93A3A]/20
+                                    scale-100
+                                    group-hover:scale-125
+                                    group-hover:border-[#F93A3A]/10
+                                    transition-all duration-500">
+                            </div>
+
+                            <div class="absolute inset-[6px]
+                                    rounded-full
+                                    bg-[#F93A3A]/5
+                                    group-hover:bg-[#F93A3A]
+                                    transition-all duration-500
+                                    flex items-center justify-center">
+
+                                <i class="fa-solid fa-shield-halved
+                                      text-[#F93A3A]
+                                      group-hover:text-white
+                                      text-lg
+                                      transition-colors duration-500">
+                                </i>
+                            </div>
+
+                        </div>
+
+                        <h3 class="font-bold text-[#851717] text-sm md:text-lg mb-3">
+                            أمان وموثوقية
+                        </h3>
+
+                        <p class="text-sm text-[#A01414] leading-6">
+                            سيارات موثوقة آمنة في كل رحلة
+                        </p>
+
+                        <!-- arrow -->
+                        <div class="mt-6 flex justify-center">
+                            <span class="w-7 h-7 rounded-full
+                                     border border-gray-100
+                                     flex items-center justify-center
+                                     text-[#F93A3A]
+                                     opacity-0 translate-y-2
+                                     group-hover:opacity-100
+                                     group-hover:translate-y-0
+                                     transition-all duration-500">
+                                <i class="fa-solid fa-arrow-left text-[9px]"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 2 -->
+                <div class="group relative">
+
+                    <div class="relative h-3/4 overflow-hidden rounded-2xl
+                            bg-white border-l-2 border-[#F93A3A]/35
+                            px-6 py-8 text-center
+                            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                            transition-all duration-500
+                            hover:-translate-y-3
+                            hover:border-[#F93A3A]/30
+                            hover:shadow-[0_20px_45px_rgba(249,58,58,0.12)]">
+
+                        <div class="absolute top-0 right-0 w-full h-[3px]
+                                bg-gradient-to-l from-[#F93A3A] to-transparent
+                                scale-x-0 origin-right
+                                group-hover:scale-x-100
+                                transition-transform duration-500">
+                        </div>
+
+                        <span class="absolute top-5 left-5
+                                 text-[10px] font-bold text-[#F93A3A]/50
+                                 group-hover:text-[#F93A3A]
+                                 transition-colors duration-500">
+                            02
+                        </span>
+
+                        <div class="relative w-16 h-16 mx-auto mb-6">
+
+                            <div class="absolute inset-0 rounded-full
+                                    border border-[#F93A3A]/20
+                                    group-hover:scale-125
+                                    group-hover:border-[#F93A3A]/10
+                                    transition-all duration-500">
+                            </div>
+
+                            <div class="absolute inset-[6px]
+                                    rounded-full bg-[#F93A3A]/5
+                                    group-hover:bg-[#F93A3A]
+                                    transition-all duration-500
+                                    flex items-center justify-center">
+
+                                <i class="fa-solid fa-car-side
+                                      text-[#F93A3A]
+                                      group-hover:text-white
+                                      text-lg transition-colors duration-500">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="font-bold text-[#851717] text-sm md:text-lg mb-3">
+                            أسطول متنوع وحديث
+                        </h3>
+
+                        <p class="text-sm text-[#A01414] leading-6">
+                            مجموعة متنوعة من السيارات الحديثة والآمنة
+                        </p>
+
+                        <div class="mt-6 flex justify-center">
+                            <span class="w-7 h-7 rounded-full border border-gray-100flex items-center justify-center
+                                     text-[#F93A3A]
+                                     opacity-0 translate-y-2
+                                     group-hover:opacity-100
+                                     group-hover:translate-y-0
+                                     transition-all duration-500">
+                                <i class="fa-solid fa-arrow-left text-[9px]"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 3 -->
+                <div class="group relative">
+
+                    <div class="relative h-3/4 overflow-hidden rounded-2xl
+                            bg-white border-l-2 border-[#F93A3A]/35
+                            px-6 py-8 text-center
+                            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                            transition-all duration-500
+                            hover:-translate-y-3
+                            hover:border-[#F93A3A]/30
+                            hover:shadow-[0_20px_45px_rgba(249,58,58,0.12)]">
+
+                        <div class="absolute top-0 right-0 w-full h-[3px]
+                                bg-gradient-to-l from-[#F93A3A] to-transparent
+                                scale-x-0 origin-right
+                                group-hover:scale-x-100
+                                transition-transform duration-500">
+                        </div>
+
+                        <span class="absolute top-5 left-5
+                                 text-[10px] font-bold  text-[#F93A3A]/50
+                                 group-hover:text-[#F93A3A]
+                                 transition-colors duration-500">
+                            03
+                        </span>
+
+                        <div class="relative w-16 h-16 mx-auto mb-6">
+
+                            <div class="absolute inset-0 rounded-full
+                                    border border-[#F93A3A]/20
+                                    group-hover:scale-125
+                                    transition-all duration-500">
+                            </div>
+
+                            <div class="absolute inset-[6px]
+                                    rounded-full bg-[#F93A3A]/5
+                                    group-hover:bg-[#F93A3A]
+                                    transition-all duration-500
+                                    flex items-center justify-center">
+
+                                <i class="fa-solid fa-bolt
+                                      text-[#F93A3A]
+                                      group-hover:text-white
+                                      text-lg transition-colors duration-500">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="font-bold text-[#851717] text-sm md:text-lge mb-3">
+                            استلام سريع وسهل
+                        </h3>
+
+                        <p class="text-sm text-[#A01414] leading-6">
+                            إجراءات بسيطة واستلام سريع للسيارة
+                        </p>
+
+                        <div class="mt-6 flex justify-center">
+                            <span class="w-7 h-7 rounded-full border border-gray-100
+                                     flex items-center justify-center
+                                     text-[#F93A3A]
+                                     opacity-0 translate-y-2
+                                     group-hover:opacity-100
+                                     group-hover:translate-y-0
+                                     transition-all duration-500">
+                                <i class="fa-solid fa-arrow-left text-[9px]"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 4-->
+                <div class="group relative">
+                    <div class="relative h-3/4 overflow-hidden rounded-2xl
+                            bg-white border-l-2 border-[#F93A3A]/35
+                            px-6 py-8 text-center
+                            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                            transition-all duration-500
+                            hover:-translate-y-3
+                            hover:border-[#F93A3A]/30
+                            hover:shadow-[0_20px_45px_rgba(249,58,58,0.12)]">
+
+                        <div class="absolute top-0 right-0 w-full h-[3px]
+                                bg-gradient-to-l from-[#F93A3A] to-transparent
+                                scale-x-0 origin-right
+                                group-hover:scale-x-100
+                                transition-transform duration-500">
+                        </div>
+
+                        <span class="absolute top-5 left-5
+                                 text-[10px] font-bold  text-[#F93A3A]/50
+                                 group-hover:text-[#F93A3A]
+                                 transition-colors duration-500">
+                            04
+                        </span>
+
+                        <div class="relative w-16 h-16 mx-auto mb-6">
+
+                            <div class="absolute inset-0 rounded-full
+                                    border border-[#F93A3A]/20
+                                    group-hover:scale-125
+                                    transition-all duration-500">
+                            </div>
+
+                            <div class="absolute inset-[6px]
+                                    rounded-full bg-[#F93A3A]/5
+                                    group-hover:bg-[#F93A3A]
+                                    transition-all duration-500
+                                    flex items-center justify-center">
+
+                                <i class="fa-solid fa-tag
+                                      text-[#F93A3A]
+                                      group-hover:text-white
+                                      text-lg transition-colors duration-500">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="font-bold text-[#851717] text-sm  md:text-lg mb-3">
+                            أسعار تنافسية
+                        </h3>
+
+                        <p class="text-sm text-[#A01414] leading-6">
+                            أسعار مناسبة وخيارات تأجير مرنة
+                        </p>
+
+                        <div class="mt-6 flex justify-center">
+                            <span class="w-7 h-7 rounded-full border border-gray-100
+                                     flex items-center justify-center
+                                     text-[#F93A3A]
+                                     opacity-0 translate-y-2
+                                     group-hover:opacity-100
+                                     group-hover:translate-y-0
+                                     transition-all duration-500">
+                                <i class="fa-solid fa-arrow-left text-[9px]"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 5 -->
+                <div class="group relative">
+
+                    <div class="relative h-3/4 overflow-hidden rounded-2xl
+                            bg-[#F93A3A] border border-gray-100
+                            px-6 py-8 text-center
+                            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                            transition-all duration-500
+                            hover:-translate-y-3
+                            hover:border-white
+                            hover:shadow-[0_20px_45px_rgba(249,58,58,0.12)]">
+
+                        <div class="absolute top-0 right-0 w-full h-[3px]
+                                bg-gradient-to-l from-[#F93A3A] to-transparent
+                                scale-x-0 origin-right
+                                group-hover:scale-x-100
+                                transition-transform duration-500">
+                        </div><span class="absolute top-5 left-5
+                                 text-[10px] font-bold  text-gray-200
+                                 group-hover:text-white
+                                 transition-colors duration-500">
+                            05
+                        </span>
+
+                        <div class="relative w-16 h-16 mx-auto mb-6">
+
+                            <div class="absolute inset-0 rounded-full
+                                    border border-white/30
+                                    group-hover:scale-125
+                                    transition-all duration-500">
+                            </div>
+
+                            <div class="absolute inset-[6px]
+                                    rounded-full bg-[#F93A3A]/5
+                                    group-hover:bg-white
+                                    transition-all duration-500
+                                    flex items-center justify-center">
+
+                                <i class="fa-solid fa-headset
+                                      text-white
+                                       group-hover:text-[#F93A3A]
+                                      text-lg transition-colors duration-500">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="font-bold text-white text-sm md:text-lg mb-3">
+                            دعم متواصل
+                        </h3>
+
+                        <p class="text-sm text-gray-200 leading-6">
+                            فريق دعم لمساعدتك عند الحاجة
+                        </p>
+
+                        <div class="mt-6 flex justify-center">
+                            <span class="w-7 h-7 rounded-full border border-gray-100
+                                     flex items-center justify-center
+                                     text-[#F93A3A]
+                                     opacity-0 translate-y-2
+                                     group-hover:opacity-100
+                                     group-hover:translate-y-0
+                                     transition-all duration-500">
+                                <i class="fa-solid fa-arrow-left text-[9px]"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Main Services -->
+
+    <section class="max-w-7xl mx-auto px-4 py-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-[#480707]  relative pb-3">
+                خدماتنا
+            </h2>
+            <p class="text-[#A01414] mt-3 font-sans text-sm md:text-base font-semibold">نوفر لك خدمة تأجير سيارات راقية
+                لتستمتع برحلة مريحة .</p>
+        </div>
+
+        <!-- groug services-->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!--card 1-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5 ">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">1</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-calendar-days text-2xl mt-1"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#851717] mb-3 font-heading">
+                            تأجير السيارات
+                        </h3>
+                    </div>
+
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            تأجير يومي
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            تأجير أسبوعي
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            تأجير شهري
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service1.jpg" alt="تأجير طويل الأمد"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 2-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">2</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            الصيانة الدورية والفحص
+                        </h3>
+                    </div>
+
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            فحص شامل قبل التسليم
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            دعم فني
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            متابعة مستمرة
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service2.jpg" alt="تأجير طويل الأمد"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 3-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">3</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-file-contract text-2xl mt-1"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            تأجير طويل الأمد
+                        </h3>
+                    </div>
+
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            خطط شهرية
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            خطط سنوية
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Our-Locations/img-branch1.jpg" alt="تأجير طويل الأمد"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 4-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">4</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-car text-2xl mt-1"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            خدمة النقل
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            من المطار إلى المطار
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            النقل الخاص
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service4.jpg" alt="خدمة النقل"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 5-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">5</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-building-circle-check text-2xl mt-1"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            خدمات الشركات
+                        </h3>
+                    </div>
+
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            أسطول للشركات
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            عقود الشركات
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service5.jpg" alt="خدمات الشركات"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 6-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">6</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-user-tie text-2xl mt-1"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            سيارة مع سائق
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            سائق محترف
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            رحلات خاصة
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service6.jpg" alt="سيارة مع سائق"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 7-->
+            <div
+                class="group bg-[#FFFFFF] rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-full transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow">7</span>
+                            <div class="text-red-600">
+                                <i class="fa-solid fa-star-half-stroke text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg md:text-xl font-semibold text-[#851717] mb-3 text-[#851717] font-heading">
+                            مميزات الخدمات
+                        </h3>
+                    </div>
+
+                    <ul class="space-y-2 text-[#A01414] text-sm md:text-base font-sans">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            أسعار مناسبة
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            سيارات حديثة
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-[#F93A3A]"></i>
+                            دعم مستمر
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-auto relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/img-service7.jpg" alt="مميزات الخدمات"
+                        class="w-full h-full object-cover transition-all duration-500 ease-out group-hover:brightness-75">
+                </div>
+            </div>
+
+
+            <!-- card 8-->
+            <div
+                class="group bg-red-600 rounded-2xl border-r-4 border-[#F93A3A]/60 shadow-lg shadow-[#F93A3A]/10  overflow-hidden flex flex-col sm:flex-row h-[400px] md:h-[220px] transition-all duration-300 ease-out hover:border-[#F93A3A] hover:-translate-y-0.5">
+
+
+                <div class="sm:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span
+                                class="w-8 h-8 bg-white text-red-700 rounded-full flex items-center justify-center font-bold text-sm shadow">8</span>
+                            <div class="text-white">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            احجز سيارتك الآن
+                        </h3>
+
+                        <p class="text-red-100 text-xs mb-3">
+                            اختر سيارتك المناسبة بكل راحة وساهم في رحلة آمنة
+                        </p>
+                    </div>
+
+                    <a href="#book"
+                        class="inline-flex items-center justify-center gap-2 bg-white text-red-700 hover:bg-gray-100 font-bold py-2.5 px-4 rounded-xl text-sm transition shadow-md">
+                        📅 احجز الآن
+                    </a>
+                </div>
+
+                <div class="sm:w-1/2 h-56 sm:h-full relative overflow-hidden">
+                    <img src="../../dist/assets/images/Services/a6e4aa0519b2bf5497ac2a51d9d1f726.jpg"
+                        alt="احجز سيارتك"
+                        class="w-full h-full object-cover opacity-90 transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+</body>
+
+</html>

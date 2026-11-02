@@ -35,57 +35,477 @@
 
 <body class="bushra-custom-page">
 
-    <header class="w-full bg-card-bg border-b border-card-tint shadow-sm sticky top-0 z-50" dir="rtl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+    <header
+        class="sticky top-0 left-0 w-full z-50 font-heading bg-card-bg dark:bg-zinc-900 border-b border-card-tint dark:border-zinc-800 transition-colors duration-300">
 
-                <!-- 1. الشعار (Logo) -->
-                <div class="flex items-center gap-3">
-                    <a href="#" class="flex items-center">
-                        <img src="../../dist/assets/images/logo.png" alt="شعار وجهة" class="w-15 h-15  ">
-                    </a>
+
+
+        <nav class="w-full sticky top-0 right-0 z-50 bg-white
+     dark:bg-gray-900 shadow-md font-sans transition-colors duration-200" dir="rtl">
+
+
+            <div class="hidden  md:block  
+            py-[6px] bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-sm
+             border-b border-gray-200 dark:border-gray-700">
+                <div class="max-w-7xl mx-auto h-8 flex justify-between items-center">
+
+                    <!-- يمين: أيقونات التواصل الاجتماعي -->
+                    <div class="social flex items-center gap-3">
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-facebook text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-instagram text-[13px] translate-x-[2%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-youtube text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-x-twitter text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white
+                         rounded-full hover:scale-105 transition-transform flex items-center justify-center                         ">
+                            <i class="fa-brands fa-whatsapp text-[13px] translate-x-[5%]"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-end gap-[6px]">
+                        <button id="theme-toggle" type="button" class="focus:outline-none rounded-lg text-sm p-1 text-heading
+                        hover:text-red-800 hover:bg-white hover:rounded-md transition-all">
+                            <svg id="theme-toggle-dark-icon" class=" hidden w-5 h-5 cursor-pointer" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://w3.org">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="text-amber-400 
+                        hidden w-5 h-5 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://w3.org">
+                                <path
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+
+                        <!-- يسار: مربع البحث السريع للابتوب -->
+                        <div class="flex items-center bg-white border border-primary rounded-md p-0.5 max-w-xs w-[62%] shadow-md"
+                            direction="rtl">
+                            <input type="text" placeholder="ابحث عن سيارة..." class="placeholder:font-heading w-full bg-transparent pr-3 pl-2 py-[4px]
+                                 text-sm
+                             text-heading placeholder-gray-400
+                              outline-none border-none focus:outline-none focus:ring-0 
+                              focus:border-transparent" />
+
+                            <button type="submit" class="flex items-center justify-center bg-primary hover:bg-primary-hover
+                             text-white rounded-full w-7 h-7 shrink-0 transition-colors duration-200
+                              focus:outline-none focus:ring-0
+                              cursor-pointer">
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    class="w-3.5 h-3.5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+
+
+
+
+                    </div>
+
                 </div>
+            </div>
 
-                <!-- 2. روابط التنقل (Navigation Links) -->
-                <nav class="hidden md:flex items-center gap-8 font-sans">
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الرئيسية</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الخدمات</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">من نحن</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الخدمات</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">الحجز</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">كيف نعمل</a>
-                    <a href="#" class="text-text font-medium hover:text-primary transition-colors">اتصل بنا</a>
-                </nav>
 
-                <!-- 3. أزرار الإجراءات (Actions & Auth) -->
-                <div class="flex items-center gap-4 font-sans">
-                    <!-- زر تسجيل الدخول -->
-                    <a href="#"
-                        class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-heading hover:text-primary transition-colors">
-                        تسجيل الدخول
-                    </a>
+            <div class="bg-white dark:bg-gray-900 border-b  md:border-none
+         border-gray-100 dark:border-gray-800 md:px-0 px-5">
+                <div class="max-w-7xl mx-auto h-16 flex justify-between items-center relative">
 
-                    <!-- زر إنشاء حساب -->
-                    <a href="#"
-                        class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold
-                         text-white bg-primary hover:bg-primary-hover rounded-xl shadow-sm transition-all duration-200">
-                        حساب جديد
-                    </a>
+                    <!-- اليمين: شعار الموقع -->
+                    <div class="flex items-center shrink-0">
+                        <a href="../../index.html" class="flex items-center">
+                            <img src="../../dist/assets/images/logo.png" alt="شعار وجهة"
+                                class="block dark:hidden h-14 w-auto object-contain" />
+                            <img src="../../dist/assets/images/logowhite-dark.png" alt="شعار وجهة"
+                                class="hidden dark:block h-14 w-auto object-contain" />
+                        </a>
+                    </div>
 
-                    <!-- زر القائمة للجوال (Mobile Menu Toggle) -->
-                    <button type="button"
-                        class="md:hidden p-2 rounded-lg text-heading hover:bg-card-tint focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                    <!-- المنتصف: روابط التنقل الأساسية (تظهر مباشرة على اللابتوب وتختفي في حاوية الموبايل) -->
+                    <div class="hidden  md:flex items-center justify-center text-base 
+                 md:text-lg font-heading mr-[10%] " id="navbar-sticky">
+                        <ul class="flex items-center  gap-10 text-heading
+                     dark:text-white font-medium">
+                            <li><a href="../../index.html" class="block text-heading nav-link transition"
+                                    aria-current="page">الرئيسية</a></li>
+                            <li><a href="categories.html"
+                                    class="block hover:text-heading nav-link transition">السيارات</a></li>
+
+                            <li><a href="blog.html" class="block hover:text-heading nav-link transition">المدونة</a>
+                            </li>
+                            <li><a href="work.html" class="block hover:text-heading nav-link transition">كيف نعمل</a>
+                            </li>
+                            <li><a href="who.html" class="block hover:text-heading nav-link transition">من نحن</a></li>
+                            <li><a href="Contact-us.html" class=" block hover:text-heading nav-link transition">تواصل
+                                    معنا</a></li>
+                            <!-- زر تبديل الثيم للابتوب -->
+
+                        </ul>
+                    </div>
+
+                    <!-- اليسار: أزرار الحساب (تظهر مباشرة على اللابتوب وتختفي في حاوية الموبايل) -->
+                    <div class="hidden md:flex md:gap-4 items-center space-x-reverse space-x-4 shrink-0">
+                        <a href="Login.html" class="text-heading dark:text-gray-300 hover:text-red-800 text-md 
+                     transition duration-300 font-heading">تسجيل
+                            الدخول</a>
+                        <a href="signup.html" class="bg-primary text-white px-3 py-1.5 rounded-md
+                     hover:bg-primary-hover
+                         transition shadow-sm text-md font-medium transition duration-300 font-heading">حساب
+                            جديد</a>
+                    </div>
+                    <div class="md:hidden flex items-center bg-white border border-primary
+                     rounded-md p-0.5 max-w-xs w-[50%] shadow-md" direction="rtl">
+                        <input type="text" placeholder="ابحث عن سيارة..."
+                            class="placeholder:font-heading w-full bg-transparent pr-3 pl-2 py-[4px] text-sm
+                             text-heading placeholder-gray-400 outline-none border-none focus:outline-none focus:ring-0 focus:border-transparent" />
+
+                        <button type="submit" class="flex items-center justify-center bg-primary hover:bg-primary-hover
+                             text-white rounded-full w-7 h-7 shrink-0 transition-colors duration-200
+                              focus:outline-none focus:ring-0
+                              cursor-pointer">
+                            <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <button id="theme-toggle-mobile" type="button" class="
+                md:hidden focus:outline-none rounded-lg text-sm p-1 text-heading
+                        hover:text-red-800 hover:bg-white hover:rounded-md transition-all">
+                        <svg id="theme-toggle-dark-icon-mobile" class="hidden  w-5 h-5 cursor-pointer"
+                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://w3.org">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon-mobile" class="hidden  w-5 h-5 cursor-pointer"
+                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://w3.org">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
+
+                    <button id="menu-toggle"
+                        class=" md:hidden p-2 text-heading dark:text-gray-300  focus:outline-none text-2xl">
+                        <i class="fas fa-bars" id="menu-icon"></i>
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div id="mobile-menu" class="hidden  md:hidden bg-white dark:bg-gray-900 border-t border-gray-100
+             dark:border-gray-800 px-4 py-4 space-y-4 shadow-inner">
+
+                <!-- روابط التنقل للموبايل -->
+                <ul class="flex flex-col font-heading items-center space-y-3 font-medium
+             text-heading dark:text-white text-xl">
+                    <li class="border-b-2 border-gray-200   w-[100%] text-center py-2
+                 my-class"><a href="../../index.html" class="block  " aria-current="page">الرئيسية</a>
+                    </li>
+
+                    <li class="border-b-2 border-gray-200  w-[100%] text-center py-2 my-class"><a href="categories.html"
+                            class="block transition ">السيارات</a></li>
+
+                    <li class="border-b-2 border-gray-200   w-[100%] text-center py-2"><a href="blog.html"
+                            class="block transition my-class ">المدونة</a></li>
+                    <li class="border-b-2 border-gray-200   w-[100%] text-center py-2"><a href="work.html"
+                            class="block transition my-class">كيف نعمل</a></li>
+                    <li class="border-b-2 border-gray-200   w-[100%] text-center py-2"><a href="who.html"
+                            class="block transition my-class">من نحن</a></li>
+                    <li class="border-b-2 border-gray-200   w-[100%] text-center py-2"><a href="Contact-us.html"
+                            class=" block transition my-class">تواصل معنا</a></li>
+
+                </ul>
+                <!-- أزرار الحساب والسوشيال ميديا للموبايل -->
+                <div class="flex flex-col items-center  gap-4">
+                    <div class="flex items-center gap-1 text-sm w-[55%] font-heading ">
+                        <a href="Login.html"
+                            class="w-[50%] text-heading font-bold dark:text-gray-300 hover:text-primary">تسجيل
+                            الدخول</a>
+                        <a href="signup.html" class=" w-[50%] bg-primary text-white px-4 py-1.5 
+                        rounded-md text-xs font-medium text-center flex-grow hover:bg-primary-hover">حساب
+                            جديد</a>
+                    </div>
+
+                    <div class="social flex items-center gap-4">
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-facebook text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-instagram text-[13px] translate-x-[2%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-youtube text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white rounded-full hover:scale-105 transition-transform flex items-center justify-center">
+                            <i class="fa-brands fa-x-twitter text-[13px] translate-x-[5%]"></i>
+                        </a>
+                        <a href="#"
+                            class="w-[25px] h-[25px] bg-primary text-white
+                         rounded-full hover:scale-105 transition-transform flex items-center justify-center                         ">
+                            <i class="fa-brands fa-whatsapp text-[13px] translate-x-[5%]"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- ================= 4. القائمة الجانبية  للجوال  ================= -->
+        <div id="sidebar-overlay"
+            class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-all duration-300">
+        </div>
+
+        <aside id="mobile-sidebar"
+            class="fixed top-0 right-0 h-full w-80 bg-card-bg dark:bg-zinc-900 z-50 translate-x-full transition-transform duration-300 ease-out shadow-2xl border-l border-card-tint dark:border-zinc-800 flex flex-col justify-between p-6 overflow-y-auto">
+            <div class="flex flex-col h-full justify-between gap-4">
+                <div>
+
+                    <div
+                        class="flex items-center justify-between pb-4 mb-4 border-b border-card-tint dark:border-zinc-800">
+                        <a href="../../index.html" class="flex items-center">
+                            <img src="../../dist/assets/images/logo.png" alt="شعار وجهة"
+                                class="h-9 w-auto object-contain" />
+                        </a>
+                        <button id="close-sidebar" type="button" aria-label="إغلاق القائمة"
+                            class="w-8 h-8 rounded-full bg-card-tint dark:bg-zinc-800 text-heading dark:text-white hover:bg-primary hover:text-white transition-all flex items-center justify-center cursor-pointer">
+                            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <form action="./cars.html" method="GET" class="mb-4">
+                        <div class="relative flex items-center w-full">
+                            <input type="text" name="q" placeholder="ابحث..."
+                                class="w-full pl-8 pr-9 py-2 rounded-xl text-xs bg-bg-main dark:bg-zinc-800 text-heading dark:text-zinc-100 border border-card-tint dark:border-zinc-700 outline-none" />
+                            <svg class="w-4 h-4 absolute right-3 text-muted dark:text-zinc-400 fill-none stroke-current stroke-2"
+                                viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                        </div>
+                    </form>
+
+
+                    <div
+                        class="mb-4 p-3 rounded-2xl bg-bg-main dark:bg-zinc-800 border border-card-tint dark:border-zinc-700 flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4 fill-current text-primary" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.06-.24c1.12.37 2.33.57 3.53.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.41.57 3.53a1 1 0 01-.24 1.06l-2.21 2.2z" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-muted dark:text-zinc-400 font-medium">خدمة العملاء</span>
+                            <a href="tel:+9668001234567" class="text-xs font-bold text-heading dark:text-white dir-ltr">
+                                +966 800 123 4567
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <p class="text-xs font-bold text-muted dark:text-zinc-400 uppercase tracking-wider mb-2 px-1">
+                        القائمة الرئيسية
+                    </p>
+                    <ul class="flex flex-col gap-1.5 max-h-64 overflow-y-auto pr-1">
+                        <li>
+                            <a href="../../index.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl bg-card-tint dark:bg-zinc-800 text-primary font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                    </svg>
+                                    <span>الرئيسية</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./cars.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                                    </svg>
+                                    <span>السيارات</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./how-it-works.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z" />
+                                    </svg>
+                                    <span>كيف تعمل؟</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                                    </svg>
+                                    <span>من نحن</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./services.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z" />
+                                    </svg>
+                                    <span>خدماتنا</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./locations.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                    </svg>
+                                    <span>المواقع</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./blog.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                                    </svg>
+                                    <span>المدونة</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./booking.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-2-7h-5v5h5v-5z" />
+                                    </svg>
+                                    <span>الحجز</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./src/pages/Admin Dashboard/Dashboard.html"
+                                class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                    <span>لوحة التحكم</span>
+                                </div>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                    viewBox="0 0 24 24">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
 
-            </div>
-        </div>
-    </header>
 
+                <div class="flex flex-col gap-2 pt-3 border-t border-card-tint dark:border-zinc-800 mt-auto">
+                    <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+                        <a href="Login.html"
+                            class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                            تسجيل الدخول
+                        </a>
+                        <a href="signup.html"
+                            class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                            إنشاء حساب
+                        </a>
+                    </div>
+                    <a href="./contact.html"
+                        class="w-full py-2.5 text-center rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-xs transition-all shadow-md flex items-center justify-center gap-2">
+                        <span>تواصل معنا</span>
+                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12" />
+                            <polyline points="12 19 5 12 12 5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </header>
     <section class="py-[30px]  mx-[15px]">
 
         <div class="bottom-origin max-w-7xl mx-auto   reservation-header  border border-card-tint
@@ -166,8 +586,7 @@
                             <span>تاريخ الاستلام</span>
                         </label>
                         <div onclick="document.getElementById('receipt-date-input').focus();
-                 document.getElementById('receipt-date-input').showPicker();"
-                            class="relative w-full py-2.5 bg-white border border-default-medium text-heading text-sm 
+                 document.getElementById('receipt-date-input').showPicker();" class="relative w-full py-2.5 bg-white border border-default-medium text-heading text-sm 
                             rounded-base focus-within:ring-2 focus-within:ring-heading px-3 
                             shadow-md flex items-center justify-between cursor-pointer min-h-[42px]">
 
@@ -188,8 +607,7 @@
 
                             <!-- حقل التاريخ الفعلي مخفي ومزود بـ ID لاستدعائه عند نقر الـ div أو الأيقونة -->
                             <input id="receipt-date-input" type="text" placeholder="يوم / شهر / سنة" dir="rtl"
-                                onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
-                                 onchange="
+                                onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" onchange="
       if(this.value) {
         const d = new Date(this.value);
         document.getElementById('receipt-date-display').innerText = `${String(d.getDate()).padStart(2,'0')} / ${String(d.getMonth()+1).padStart(2,'0')} / ${d.getFullYear()}`;

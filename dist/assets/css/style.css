@@ -1086,6 +1086,9 @@
   .order-2 {
     order: 2;
   }
+  .col-span-1 {
+    grid-column: span 1 / span 1;
+  }
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -1734,9 +1737,6 @@
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
-  .h-15 {
-    height: calc(var(--spacing) * 15);
-  }
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -2052,9 +2052,6 @@
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
-  }
-  .w-15 {
-    width: calc(var(--spacing) * 15);
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
@@ -2535,6 +2532,9 @@
   .justify-start {
     justify-content: flex-start;
   }
+  .justify-items-center {
+    justify-items: center;
+  }
   .gap-1 {
     gap: var(--spacing);
   }
@@ -2647,6 +2647,9 @@
   }
   .self-start {
     align-self: flex-start;
+  }
+  .justify-self-center {
+    justify-self: center;
   }
   .truncate {
     overflow: hidden;
@@ -4263,6 +4266,9 @@
   .text-\[35px\] {
     font-size: 35px;
   }
+  .text-\[50px\] {
+    font-size: 50px;
+  }
   .leading-5 {
     --tw-leading: var(--leading-5);
     line-height: var(--leading-5);
@@ -4379,9 +4385,6 @@
   .text-\[\#480707\] {
     color: #480707;
   }
-  .text-\[\#480707\]\/80 {
-    color: color-mix(in oklab, #480707 80%, transparent);
-  }
   .text-\[\#800020\] {
     color: #800020;
   }
@@ -4408,6 +4411,9 @@
   }
   .text-\[\#F93A3A\]\/50 {
     color: color-mix(in oklab, #F93A3A 50%, transparent);
+  }
+  .text-\[px\] {
+    color: px;
   }
   .text-\[rgb\(59\,59\,59\)\] {
     color: rgb(59,59,59);
@@ -6135,6 +6141,9 @@
     .md\:w-\[250px\] {
       width: 250px;
     }
+    .md\:w-auto {
+      width: auto;
+    }
     .md\:w-full {
       width: 100%;
     }
@@ -6208,6 +6217,9 @@
     .md\:justify-start {
       justify-content: flex-start;
     }
+    .md\:justify-items-start {
+      justify-items: start;
+    }
     .md\:gap-0 {
       gap: 0px;
     }
@@ -6244,6 +6256,9 @@
     .md\:gap-y-3 {
       row-gap: calc(var(--spacing) * 3);
     }
+    .md\:justify-self-start {
+      justify-self: flex-start;
+    }
     .md\:rounded-xl {
       border-radius: var(--radius-xl);
     }
@@ -6254,6 +6269,9 @@
     .md\:border-none {
       --tw-border-style: none;
       border-style: none;
+    }
+    .md\:bg-card-bg {
+      background-color: var(--color-card-bg);
     }
     .md\:bg-transparent {
       background-color: transparent;
@@ -6345,6 +6363,9 @@
     .md\:pr-0 {
       padding-right: 0px;
     }
+    .md\:pb-0 {
+      padding-bottom: 0px;
+    }
     .md\:pb-3 {
       padding-bottom: calc(var(--spacing) * 3);
     }
@@ -6405,6 +6426,9 @@
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
+    .md\:text-\[1px\] {
+      font-size: 1px;
+    }
     .md\:text-\[10px\] {
       font-size: 10px;
     }
@@ -6413,6 +6437,12 @@
     }
     .md\:text-\[16px\] {
       font-size: 16px;
+    }
+    .md\:text-\[18px\] {
+      font-size: 18px;
+    }
+    .md\:text-\[20px\] {
+      font-size: 20px;
     }
     .md\:text-\[50px\] {
       font-size: 50px;
@@ -7101,10 +7131,10 @@ html, body {
   scroll-behavior: smooth;
 }
 .bushra-custom-page {
-  font-family: var(--font-heading) !important;
+  font-family: var(--font-sans) !important;
 }
 .bushra-custom-page h1, .bushra-custom-page h2 {
-  font-family: var(--font-sans) !important;
+  font-family: var(--font-heading) !important;
 }
 .nav-link:hover {
   font-weight: bold;

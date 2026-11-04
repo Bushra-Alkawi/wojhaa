@@ -5,21 +5,21 @@
                 text: "المنصة جعلت رحلتي سهلة وممتعة للغاية، السيارة كانت نظيفة تماماً، العملية سلسة، وخدمة العملاء كانت استثنائية بكل ما تحمله الكلمة من معنى.",
                 name: "سارة محمد",
                 role: "عميلة دائمة",
-                avatar: "./dist/assets/images/featuress/image3.jpg",
-                carImg: "./dist/assets/images/featuress/feature1.jpg"
+                avatar: "./dist/assets/images/featuress/feature2.jpg",
+                carImg: "./dist/assets/images/featuress/feature2.jpg"
             },
             {
                 text: "تجربة استئجار السيارة عبر المنصة كانت الأفضل على الإطلاق، إجراءات التسليم والاستلام كانت في أسرع وقت وبدون أي تعقيد.",
                 name: "محمد الأحمد",
                 role: "رجل أعمال",
-                avatar: "./dist/assets/images/featuress/fqr4.jpg",
-                carImg: "./dist/assets/images/featuress/feature2.jpg"
+                avatar: "./dist/assets/images/featuress/fqr6.jpg",
+                carImg: "./dist/assets/images/featuress/feature1.jpg"
             },
             {
                 text: "أسعار تنافسية للغاية وسيارات حديثة وممتازة، أنصح الجميع بالتعامل معهم لضمان رحلة مريحة وآمنة.",
                 name: "خالد العمري",
                 role: "مهندس مدني ",
-                avatar: "./dist/assets/images/featuress/test2.jpg",
+                avatar: "./dist/assets/images/featuress/fqr2.jpg",
                 carImg: "./dist/assets/images/featuress/feature3.jpg"
             },
             {

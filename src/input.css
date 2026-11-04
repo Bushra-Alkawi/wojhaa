@@ -61,12 +61,12 @@ h1, h2 {
 
 
 .bushra-custom-page {
-  font-family: var(--font-heading) !important; /* يجبر الـ body الخاص بصفحتك على أخذ هذا الخط */
+  font-family: var(--font-sans) !important; /* يجبر الـ body الخاص بصفحتك على أخذ هذا الخط */
 }
 
 .bushra-custom-page h1, 
 .bushra-custom-page h2 {
-  font-family: var(--font-sans) !important; /* يلغي تأثير الخط المشترك على عناوينك ويطبق خطك */
+  font-family: var(--font-heading) !important; /* يلغي تأثير الخط المشترك على عناوينك ويطبق خطك */
 }
 
 .nav-link:hover  {

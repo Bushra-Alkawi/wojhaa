@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الأدمن </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="icon" type="image/svg+xml" href="../../../dist/assets/images/image.png">
+
+
+
+    <link rel="stylesheet" href="/dist/assets/css/style.css" />
+    <link rel="stylesheet" href="/dist/assets/css/all.min.css" />
+    <style>
+        /* كلاس مخصص يضمن إخفاء السايدبار تماماً دون أي تضارب في كلاسات Tailwind */
+        .sidebar-hidden {
+            width: 0px !important;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+
+
+
+<body class="bg-gray-100 font-sans antialiased m-0 p-0">
+
+    <!-- الحاوية الرئيسية: كلاس flex يضمن اصطفاف السايدبار والمحتوى أفقياً (جنباً إلى جنب) -->
+    <div class="flex h-screen w-full overflow-hidden relative">
+        <!-- 1. الشريحة الجانبية (Sidebar) -->
+        <!-- كلاس shrink-0 يمنع المحتوى من ضغط السايدبار وتشويهه -->
+        <div id="sidebar" class="font-heading 
+            absolute md:relative top-0 right-0 h-full bg-heading text-gray-100 w-72 md:w-64 flex flex-col
+            shrink-0 z-40 shadow-2xl md:shadow-none transition-all duration-300 ease-in-out overflow-hidden border-l
+            border-gray-200 translate-x-full md:translate-x-0">
+
+
+            <!-- شعار أو عنوان السايدبار -->
+            <div class="flex justify-start gap-4 py-4 px-4
+             font-semibold text-lg tracking-wide bg-white text-heading
+       whitespace-nowrap shadow-md">
+
+                <img class="w-7  " src="../../../dist/assets/images/logo.png" alt="شعار الموقع" />
+                <p class="font-heading">
+                    لوحة التحكم
+                </p>
+
+            </div>
+
+            <div class="py-5">
+                <a href="./homeDashboard.html" class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3
+                 text-white/80 transition 
+                 bg-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z" />
+                    </svg>
+                    <span class=""> الرئيسية</span>
+                </a>
+
+                <a href="./MangCars.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M5 17h14M6 17v2m12-2v2M4 17h16l-1.5-6h-13L4 17Zm2-6 1.5-3h9L18 11M7 14h.01M17 14h.01" />
+                    </svg>
+
+                    <span>إدارة السيارات</span>
+                </a>
+                <!-- الحجوزات -->
+                <a href="./ManageBookings.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <rect x="4" y="5" width="16" height="16" rx="2" />
+                        <path stroke-linecap="round" d="M8 3v4M16 3v4M4 10h16" />
+                    </svg>
+                    <span>إدارة الحجوزات</span>
+                </a>
+
+                <!-- المستخدمين -->
+
+                <a href="./ManageUser.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="8" r="3" />
+                        <path stroke-linecap="round" d="M5 20a7 7 0 0 1 14 0" />
+                    </svg>
+                    <span>إدارة المستخدمين</span>
+                </a>
+
+                <!-- المدفوعات -->
+
+                <a href="./Payments.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <rect x="5" y="3" width="14" height="18" rx="2" />
+                        <path stroke-linecap="round" d="M8 8h8M8 12h8M8 16h4" />
+                    </svg>
+                    <span>إدارة المدفوعات</span>
+                </a>
+                <!-- التقارير -->
+                <a href="./Reports.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+                    <span class="text-xl">▥</span>
+                    <span>التقارير </span>
+                </a>
+                <!-- الإعدادات -->
+                <a href="./Settings.html"
+                    class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="3" />
+                        <path stroke-linecap="round" d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 1.7-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V20h-2.4v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L7 17l.1-.1A1.7 1.7 0 0 0 7.4 15a1.7 1.7 0 0 0-1.6-1H5.7v-2.4h.1a1.7 1.7 0 0 0 1.6-1A1.7 1.7 0 0 0 7 8.7L6.9 8.6 8.6 7l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V5.7H14v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.7 1.7-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6
+ 1h.1v2.4h-.1a1.7 1.7 0 0 0-1.6.9Z" />
+                    </svg>
+                    <span class="">الإعدادات</span>
+                </a>
+            </div>
+            </nav>
+
+            <!-- Logout -->
+            <a href="#" id="logout"
+                class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" d="M10 17l5-5-5-5M15 12H3" />
+                    <path stroke-linecap="round" d="M21 19V5a2 2 0 0 0-2-2h-6" />
+                </svg>
+                <span class="">تسجيل الخروج</span>
+            </a>
+
+        </div>
+
+        <!-- 2. منطقة المحتوى الرئيسية (Content) -->
+        <!-- كلاس flex-1 هو المسؤول عن جعل هذه المنطقة تتمدد وتنكمش تلقائياً وتأخذ كل المساحة المتبقية -->
+        <div class="flex-1 flex flex-col overflow-hidden bg-gray-50">
+
+
+            <header class="sticky top-0 left-0 w-full z-50 font-heading bg-card-bg 
+                dark:bg-zinc-900 border-b border-card-tint dark:border-zinc-800 transition-colors duration-300">
+
+                <nav class="w-full sticky top-0 right-0 z-50 bg-white
+     dark:bg-gray-900 shadow-md font-sans transition-colors duration-200" dir="rtl">
+
+                    <div class="bg-white dark:bg-gray-900 border-b  md:border-none
+         border-gray-100 dark:border-gray-800 md:px-0 px-5">
+                        <div class="h-16 flex justify-between items-center relative">
+
+                            <div class="mr-3" id="toggleBtn">
+                                <a href="#"><i class="fa-solid far fa-chart-bar text-2xl text-heading"
+                                        id="sidebar-toggle"></i></a>
+                            </div>
+
+                            <!-- المنتصف: روابط التنقل الأساسية (تظهر مباشرة على اللابتوب وتختفي في حاوية الموبايل) -->
+                            <div class="hidden  md:flex items-center justify-center text-base 
+                 md:text-lg font-heading mr-[10%] " id="navbar-sticky">
+
+                                <ul class="flex items-center  gap-10 text-heading
+                     dark:text-white font-medium">
+                                    </li>
+                                    <li><a href="../../../index.html" class="block text-heading nav-link transition"
+                                            aria-current="page">الرئيسية</a></li>
+                                    <li><a href="../Services.html"
+                                            class="block hover:text-heading nav-link transition">خدماتنا</a>
+                                    </li>
+
+
+
+                                    <li><a href="../Our-Location.html" class="block hover:text-heading nav-link
+                                 transition">مواقعنا</a>
+                                    </li>
+                                    <li><a href="../work.html" class="block hover:text-heading nav-link transition">كيف
+                                            نعمل</a>
+                                    </li>
+                                    <li><a href="../who.html" class="block hover:text-heading nav-link transition">من
+                                            نحن</a></li>
+                                    <li><a href="../Contact-us.html"
+                                            class=" block hover:text-heading nav-link transition">تواصل
+                                            معنا</a></li>
+
+                                </ul>
+                            </div>
+
+                            <div class="hidden md:flex md:gap-4 items-center pe-5 space-x-reverse space-x-4">
+                                <div class="avatar">
+                                                     <img class="rounded-full w-10 h-10" src="../../../dist/assets/images/featuress/fqr4(1).jpg"  alt="">
+
+                                </div>
+                            </div>
+                            <div class="md:hidden flex items-center bg-white border border-primary
+                     rounded-md p-0.5 max-w-xs w-[50%] shadow-md" direction="rtl">
+                                <input type="text" placeholder="ابحث عن سيارة..."
+                                    class="placeholder:font-heading w-full bg-transparent pr-3 pl-2 py-[4px] text-sm
+                             text-heading placeholder-gray-400 outline-none border-none focus:outline-none focus:ring-0 focus:border-transparent" />
+
+                                <button type="submit" class="flex items-center justify-center bg-primary hover:bg-primary-hover
+                             text-white rounded-full w-7 h-7 shrink-0 transition-colors duration-200
+                              focus:outline-none focus:ring-0
+                              cursor-pointer">
+                                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                        class="w-3.5 h-3.5">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="avatar md:hidden">
+                  <img class="rounded-full w-10 h-10" src="../../../dist/assets/images/featuress/fqr4(1).jpg"  alt="">
+                            </div>
+
+                            <button id="menu-toggle"
+                                class=" md:hidden p-2 text-heading dark:text-gray-300  focus:outline-none text-2xl">
+                                <i class="fas fa-bars" id="menu-icon"></i>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <div id="mobile-menu" class="hidden  md:hidden bg-white dark:bg-gray-900 border-t border-gray-100
+             dark:border-gray-800 px-4 py-4 space-y-4 shadow-inner">
+
+                        <!-- روابط التنقل للموبايل -->
+                        <ul class="flex flex-col font-heading items-center space-y-3 font-medium
+             text-heading dark:text-white text-xl">
+                            <li class="border-b-2 border-gray-200   w-[100%] text-center py-2
+                 my-class"><a href="../../index.html" class="block  " aria-current="page">الرئيسية</a>
+                            </li>
+
+                            <li class="border-b-2 border-gray-200  w-[100%] text-center py-2 my-class"><a
+                                    href="../Services.html" class="block transition ">خدماتنا</a></li>
+
+                            <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a
+                                    href="../Our-Location.html" class="block transition  ">مواقعنا</a></li>
+                            <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a
+                                    href="../work.html" class="block transition ">كيف نعمل</a></li>
+                            <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a
+                                    href="../who.html" class="block transition ">من نحن</a></li>
+                            <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a
+                                    href="../Contact-us.html" class=" block transition ">تواصل معنا</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+
+                <!-- ================= 4. القائمة الجانبية  للجوال  ================= -->
+                <div id="sidebar-overlay"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-all duration-300">
+                </div>
+
+                <aside id="mobile-sidebar"
+                    class="fixed top-0 right-0 h-full w-80 bg-card-bg dark:bg-zinc-900 z-50 translate-x-full transition-transform duration-300 ease-out shadow-2xl border-l border-card-tint dark:border-zinc-800 flex flex-col justify-between p-6 overflow-y-auto">
+                    <div class="flex flex-col h-full justify-between gap-4">
+                        <div>
+
+                            <div
+                                class="flex items-center justify-between pb-4 mb-4 border-b border-card-tint dark:border-zinc-800">
+                                <a href="../../index.html" class="flex items-center">
+                                    <img src="../../dist/assets/images/logo.png" alt="شعار وجهة"
+                                        class="h-9 w-auto object-contain" />
+                                </a>
+                                <button id="close-sidebar" type="button" aria-label="إغلاق القائمة"
+                                    class="w-8 h-8 rounded-full bg-card-tint dark:bg-zinc-800 text-heading dark:text-white hover:bg-primary hover:text-white transition-all flex items-center justify-center cursor-pointer">
+                                    <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <form action="./cars.html" method="GET" class="mb-4">
+                                <div class="relative flex items-center w-full">
+                                    <input type="text" name="q" placeholder="ابحث..."
+                                        class="w-full pl-8 pr-9 py-2 rounded-xl text-xs bg-bg-main dark:bg-zinc-800 text-heading dark:text-zinc-100 border border-card-tint dark:border-zinc-700 outline-none" />
+                                    <svg class="w-4 h-4 absolute right-3 text-muted dark:text-zinc-400 fill-none stroke-current stroke-2"
+                                        viewBox="0 0 24 24">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    </svg>
+                                </div>
+                            </form>
+
+
+                            <div
+                                class="mb-4 p-3 rounded-2xl bg-bg-main dark:bg-zinc-800 border border-card-tint dark:border-zinc-700 flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 fill-current text-primary" viewBox="0 0 24 24">
+                                        <path
+                                            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.06-.24c1.12.37 2.33.57 3.53.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.41.57 3.53a1 1 0 01-.24 1.06l-2.21 2.2z" />
+                                    </svg>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-muted dark:text-zinc-400 font-medium">خدمة العملاء</span>
+                                    <a href="tel:+9718001234567"
+                                        class="text-xs font-bold text-heading dark:text-white dir-ltr">
+                                        +971 800 123 4567
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <p
+                                class="text-xs font-bold text-muted dark:text-zinc-400 uppercase tracking-wider mb-2 px-1">
+                                القائمة الرئيسية
+                            </p>
+                            <ul class="flex flex-col gap-1.5 max-h-64 overflow-y-auto pr-1">
+                                <li>
+                                    <a href="../../index.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl bg-card-tint dark:bg-zinc-800 text-primary font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                            </svg>
+                                            <span>الرئيسية</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./cars.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                                            </svg>
+                                            <span>السيارات</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./how-it-works.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z" />
+                                            </svg>
+                                            <span>كيف تعمل؟</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./about.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                                            </svg>
+                                            <span>من نحن</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./services.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z" />
+                                            </svg>
+                                            <span>خدماتنا</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./locations.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg>
+                                            <span>المواقع</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./blog.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                                            </svg>
+                                            <span>المدونة</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./booking.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-2-7h-5v5h5v-5z" />
+                                            </svg>
+                                            <span>الحجز</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./src/pages/Admin Dashboard/Dashboard.html"
+                                        class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                                <rect x="3" y="3" width="7" height="7"></rect>
+                                                <rect x="14" y="3" width="7" height="7"></rect>
+                                                <rect x="14" y="14" width="7" height="7"></rect>
+                                                <rect x="3" y="14" width="7" height="7"></rect>
+                                            </svg>
+                                            <span>لوحة التحكم</span>
+                                        </div>
+                                        <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40"
+                                            viewBox="0 0 24 24">
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                        <div class="flex flex-col gap-2 pt-3 border-t border-card-tint dark:border-zinc-800 mt-auto">
+                            <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+                                <a href="Login.html"
+                                    class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                                    تسجيل الدخول
+                                </a>
+                                <a href="signup.html"
+                                    class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                                    إنشاء حساب
+                                </a>
+                            </div>
+                            <a href="./contact.html"
+                                class="w-full py-2.5 text-center rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-xs transition-all shadow-md flex items-center justify-center gap-2">
+                                <span>تواصل معنا</span>
+                                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12" />
+                                    <polyline points="12 19 5 12 12 5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </header>
+
+            <!-- منطقة المحتوى الفعلي داخل الصفحة -->
+            <!-- كلاس overflow-y-auto يضمن ظهور سكرول داخلي هنا فقط إذا كان المحتوى طويلاً -->
+            <main class="p-6 flex-1 overflow-y-auto">
+
+                <!-- شبكة العناصر (Grid) ستتمدد وتتوزع تلقائياً بناءً على عرض الشاشة المتاح -->
+                <div class=" relative">
+                    <!-- 3. MAIN  -->
+                    <main class="min-h-screen">
+
+                        <!-- محتوى الداشبورد -->
+                        <div class="mx-auto max-w-[1600px] space-y-6 p-4 sm:p-6 lg:p-8">
+
+                            <!-- الترحيب -->
+                            <section class="flex flex-col gap-4 xl:flex-row
+                xl:items-center xl:justify-between">
+
+                                <div>
+                                    <h1 class="font-heading text-2xl
+                        font-bold text-heading sm:text-3xl">
+                                        مرحبًا، مدير النظام 👋
+                                    </h1>
+
+                                    <p class="mt-2 text-base text-muted">
+                                        إليك ملخص سريع عن أداء النظام اليوم.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3 rounded-2xl
+                    border border-primary/10 bg-card-tint p-4">
+
+                                    <div class="flex h-12 w-12 shrink-0
+                        items-center justify-center rounded-xl
+                        bg-primary text-2xl text-white">
+                                        ▦
+                                    </div>
+
+                                    <div>
+                                        <p class="text-sm font-semibold text-heading">
+                                            الجمعة، 13 نوفمبر 2026
+                                        </p>
+
+                                        <p class="mt-1 text-xs text-muted">
+                                            آخر تحديث: 10:24 ص
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- ================= STATISTICS ================= -->
+
+                            <section class="grid grid-cols-1 gap-4
+                sm:grid-cols-2 2xl:grid-cols-4">
+
+                                <!-- إجمالي السيارات -->
+                                <article class="rounded-2xl border border-primary/10
+                    bg-card-bg p-5 shadow-sm">
+
+                                    <div class="flex items-start justify-between">
+
+                                        <div>
+                                            <p class="text-lg font-bold font-heading text-heading ">
+                                                إجمالي السيارات
+                                            </p>
+
+                                            <h2 class="mt-3 text-2xl
+                                font-bold text-primary">
+                                                42
+                                            </h2>
+                                        </div>
+
+                                        <div class="flex h-12 w-12 items-center
+                            justify-center rounded-full
+                            bg-card-tint text-2xl">
+                                            🚘
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-5 flex justify-between">
+                                        <span class="text-xs font-semibold text-green-700">
+                                            ↑ 5%
+                                        </span>
+
+                                        <span class="text-sm text-muted">
+                                            مقارنة بالشهر الماضي
+                                        </span>
+                                    </div>
+
+                                </article>
+
+
+                                <!-- إجمالي الحجوزات -->
+                                <article class="rounded-2xl border border-blue-100
+                    bg-card-bg p-5 shadow-sm">
+
+                                    <div class="flex items-start justify-between">
+
+                                        <div>
+                                            <p class="text-lg font-bold font-heading text-heading ">
+                                                إجمالي الحجوزات
+                                            </p>
+
+                                            <h2 class="mt-3 text-2xl
+                                font-bold text-primary">
+                                                156
+                                            </h2>
+                                        </div>
+
+                                        <div class="flex h-12 w-12 items-center
+                            justify-center rounded-full
+                            bg-blue-100 text-2xl text-blue-600">
+                                            ▣
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-5 flex justify-between">
+                                        <span class="text-xs font-semibold text-green-700">
+                                            ↑ 15%
+                                        </span>
+
+                                        <span class="text-sm text-muted">
+                                            مقارنة بالشهر الماضي
+                                        </span>
+                                    </div>
+
+                                </article>
+
+
+                                <!-- الحجوزات النشطة -->
+                                <article class="rounded-2xl border border-green-100
+                    bg-card-bg p-5 shadow-sm">
+
+                                    <div class="flex items-start justify-between">
+
+                                        <div>
+                                            <p class="text-lg font-bold font-heading text-heading ">
+                                                الحجوزات النشطة
+                                            </p>
+
+
+                                            <h2 class="mt-3 text-2xl
+                                font-bold text-green-700">
+                                                18
+                                            </h2>
+                                        </div>
+                                        <div class="flex h-12 w-12 items-center
+                            justify-center rounded-full
+                            bg-green-100 text-2xl text-green-700">
+                                            🚗
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-5 flex justify-between">
+                                        <span class="text-xs font-semibold text-green-700">
+                                            ↑ 8%
+                                        </span>
+
+                                        <span class="text-sm text-muted">
+                                            مقارنة بالشهر الماضي
+                                        </span>
+                                    </div>
+
+                                </article>
+
+
+                                <!-- المستخدمون -->
+                                <article class="rounded-2xl border border-rose-100
+                    bg-card-bg p-5 shadow-sm">
+
+                                    <div class="flex items-start justify-between">
+
+                                        <div>
+                                            <p class="text-lg font-bold font-heading text-heading ">
+                                                المستخدمون المسجلون
+                                            </p>
+
+                                            <h2 class="mt-3 text-2xl
+                                font-bold text-primary">
+                                                248
+                                            </h2>
+                                        </div>
+
+                                        <div class="flex h-12 w-12 items-center
+                            justify-center rounded-full
+                            bg-card-tint text-2xl text-primary">
+                                            ♧
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-5 flex justify-between">
+                                        <span class="text-xs font-semibold text-green-700">
+                                            ↑ 12%
+                                        </span>
+
+                                        <span class="text-sm text-muted">
+                                            مقارنة بالشهر الماضي
+                                        </span>
+                                    </div>
+
+                                </article>
+
+                            </section>
+
+
+                            <!-- ================= CHARTS & BOOKINGS ================= -->
+
+                            <section class="grid grid-cols-1 gap-3 xl:grid-cols-12">
+
+                                <!-- مخطط الحجوزات -->
+                                <article class="rounded-2xl border border-gray-200
+                    bg-card-bg p-4 shadow-sm sm:p-5 xl:col-span-6">
+
+                                  
+                                        <h2 class="mb-20 text-lg font-bold font-heading text-heading ">
+
+
+                                            إحصائيات الحجوزات خلال آخر 7 أيام
+                                    </h2>
+
+                                    <div class="relative h-64 sm:h-72">
+                                        <canvas id="bookingsChart"></canvas>
+                                    </div>
+
+                                </article>
+
+
+                                <!-- حالة الحجوزات -->
+                                <article class="rounded-2xl border border-gray-200
+                    bg-card-bg p-4 shadow-sm sm:p-5 xl:col-span-3">
+
+                                    <h2 class="mb-5 font-heading text-base
+                        font-bold text-heading">
+                                        حالة الحجوزات
+                                    </h2>
+
+                                    <div class="relative mx-auto h-56 max-w-xs">
+                                        <canvas id="statusChart"></canvas>
+                                    </div>
+
+                                    <div class="mt-5 space-y-3 text-sm">
+
+                                        <div class="flex items-center justify-between">
+                                            <span class="flex items-center gap-2">
+                                                <span class="h-3 w-3 rounded-full bg-green-600"></span>
+                                                مكتملة
+                                            </span>
+                                            <strong class="text-heading">82</strong>
+                                        </div>
+
+                                        <div class="flex items-center justify-between">
+                                            <span class="flex items-center gap-2">
+                                                <span class="h-3 w-3 rounded-full bg-primary"></span>
+                                                نشطة
+                                            </span>
+                                            <strong class="text-heading">18</strong>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="flex items-center gap-2">
+                                                <span class="h-3 w-3 rounded-full bg-gray-400"></span>
+                                                ملغاة
+                                            </span>
+                                            <strong class="text-heading">9</strong>
+                                        </div>
+
+                                        <div class="flex items-center justify-between">
+                                            <span class="flex items-center gap-2">
+                                                <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                                                قيد المراجعة
+                                            </span>
+                                            <strong class="text-heading">7</strong>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- أحدث الحجوزات -->
+                                <article class="rounded-2xl border border-gray-200
+                    bg-card-bg p-4 shadow-sm sm:p-5 xl:col-span-3">
+
+                                    <div class="mb-4 flex items-center justify-between gap-2">
+
+                                        <h2 class="font-heading text-base
+                            font-bold text-heading">
+                                            أحدث الحجوزات
+                                        </h2>
+
+                                        <a href="admin-bookings.html" class="shrink-0 text-xs font-semibold
+                            text-primary hover:underline">
+                                            عرض الكل ←
+                                        </a>
+
+                                    </div>
+
+                                    <div class="divide-y divide-gray-100">
+
+                                        <!-- حجز 1 -->
+                                        <div class="flex items-center gap-3 py-3">
+
+                                            <div class="flex h-14 w-14 shrink-0
+                                items-center justify-center rounded-xl
+                                bg-bg-main text-3xl">
+                                                <img src="../../../dist/assets/images/dashboard/nissan.jpg" alt="">
+                                            </div>
+
+                                            <div class="min-w-0 flex-1">
+                                                <h3 class="truncate text-sm font-semibold text-heading">
+                                                    نيسان سنترا
+                                                </h3>
+
+                                                <p class="mt-1 text-xs text-muted">
+                                                    #WJ-1024
+                                                </p>
+
+                                                <p class="mt-1 text-[11px] text-muted">
+                                                    2026-10-05
+                                                </p>
+                                            </div>
+
+                                            <span class="rounded-full bg-green-100
+                                px-2 py-1 text-xs text-green-800">
+                                                نشط
+                                            </span>
+
+                                        </div>
+
+
+                                        <!-- حجز 2 -->
+                                        <div class="flex items-center gap-3 py-3">
+
+                                            <div class="flex h-14 w-14 shrink-0
+                                items-center justify-center rounded-xl
+                                bg-bg-main text-3xl">
+                                                <img src="../../../dist/assets/images/dashboard/hyundai.jpg" alt="">
+                                            </div>
+
+                                            <div class="min-w-0 flex-1">
+                                                <h3 class="truncate text-sm font-semibold text-heading">
+                                                    هيونداي
+                                                </h3>
+
+                                                <p class="mt-1 text-xs text-muted">
+                                                    #WJ-1023
+                                                </p>
+
+                                                <p class="mt-1 text-[11px] text-muted">
+                                                    2026-10-04
+                                                </p>
+                                            </div>
+
+                                            <span class="rounded-full bg-green-100
+                                px-2 py-1 text-xs text-green-800">
+                                                مكتمل
+                                            </span>
+
+                                        </div>
+                                        <!-- حجز 3 -->
+                                        <div class="flex items-center gap-3 py-3">
+
+                                            <div class="flex h-14 w-14 shrink-0
+                                items-center justify-center rounded-xl
+                                bg-bg-main text-3xl">
+                                                <img src="../../../dist/assets/images/dashboard/toyotaraize.jpg" alt="">
+                                            </div>
+
+                                            <div class="min-w-0 flex-1">
+                                                <h3 class="truncate text-sm font-semibold text-heading">
+                                                    تويوتا رايز
+                                                </h3>
+
+                                                <p class="mt-1 text-xs text-muted">
+                                                    #WJ-1022
+                                                </p>
+
+                                                <p class="mt-1 text-[11px] text-muted">
+                                                    2026-10-04
+                                                </p>
+                                            </div>
+
+                                            <span class="rounded-full bg-amber-100
+                                px-2 py-1 text-xs text-amber-800">
+                                                قيد المراجعة
+                                            </span>
+
+                                        </div>
+
+
+                                        <!-- حجز 4 -->
+                                        <div class="flex items-center gap-3 py-3">
+
+                                            <div class="flex h-14 w-14 shrink-0
+                                items-center justify-center rounded-xl
+                                bg-bg-main text-3xl">
+                                                <img src="../../../dist/assets/images/dashboard/BMWjpg.jpg" alt="">
+                                            </div>
+
+                                            <div class="min-w-0 flex-1">
+                                                <h3 class="truncate text-sm font-semibold text-heading">
+                                                    BMW
+                                                </h3>
+
+                                                <p class="mt-1 text-xs text-muted">
+                                                    #WJ-1021
+                                                </p>
+
+                                                <p class="mt-1 text-[11px] text-muted">
+                                                    2026-10-03
+                                                </p>
+                                            </div>
+
+                                            <span class="rounded-full bg-rose-100
+                                px-2 py-1 text-xs text-rose-800">
+                                                ملغي
+                                            </span>
+
+                                        </div>
+
+
+                                        <!-- حجز 5 -->
+                                        <div class="flex items-center gap-3 py-3">
+
+                                            <div class="flex h-14 w-14 shrink-0
+                                items-center justify-center rounded-xl
+                                bg-bg-main text-3xl">
+                                                <img src="../../../dist/assets/images/dashboard/toyotahiluxblack.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <div class="min-w-0 flex-1">
+                                                <h3 class="truncate text-sm font-semibold text-heading">
+                                                    تويوتا هايلوكس
+                                                </h3>
+
+                                                <p class="mt-1 text-xs text-muted">
+                                                    #WJ-1020
+                                                </p>
+
+                                                <p class="mt-1 text-[11px] text-muted">
+                                                    2026-10-03
+                                                </p>
+                                            </div>
+
+                                            <span class="rounded-full bg-green-100
+                                px-2 py-1 text-xs text-green-800">
+                                                نشط
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                            </section>
+
+
+                            <!-- ================= TOP CARS ================= -->
+
+                            <section class="rounded-2xl border border-gray-200
+                bg-card-bg p-4 shadow-sm sm:p-5">
+
+                                <div class="mb-5 flex items-center justify-between gap-3">
+
+                                    <h2 class="font-heading text-base
+                        font-bold text-heading">
+                                        🔥 السيارات الأعلى طلبًا
+                                    </h2>
+                                    <a href="admin-cars.html" class="shrink-0 text-xs font-semibold
+                        text-primary hover:underline">
+                                        عرض الكل ←
+                                    </a>
+
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-4
+                    sm:grid-cols-2 xl:grid-cols-4">
+
+
+                                    <!-- السيارة الأولى -->
+                                    <article class="overflow-hidden rounded-2xl
+                        border border-gray-200 bg-card-bg">
+
+                                        <div class="flex h-36 items-center
+                            justify-center bg-bg-main text-6xl">
+                                            <img src="../../../dist/assets/images/dashboard/toyotahiluxblack.jpg"
+                                                alt="">
+                                        </div>
+
+                                        <div class="p-4 text-center">
+
+                                            <h3 class="font-semibold text-heading">
+                                                تويوتا هايلوكس
+                                            </h3>
+
+                                            <p class="mt-2 text-sm text-amber-500">
+                                                <span class="text-text">4.9 (32)</span> ★
+                                            </p>
+
+
+
+                                            <div class="mt-2 text-sm text-text">
+                                                <span>$120</span>
+                                                <span>/ يوم</span>
+                                            </div>
+
+                                            <a href="admin-cars.html" class="mt-4 block rounded-xl bg-primary
+                                px-4 py-2.5 text-sm font-semibold
+                                text-white transition hover:bg-primary-hover">
+                                                عرض التفاصيل
+                                            </a>
+
+                                        </div>
+
+                                    </article>
+
+
+                                    <!-- السيارة الثانية -->
+                                    <article class="overflow-hidden rounded-2xl
+                        border border-gray-200 bg-card-bg">
+
+                                        <div class="flex h-36 items-center
+                            justify-center bg-bg-main text-6xl">
+                                            <img src="../../../dist/assets/images/dashboard/BMWjpg.jpg" alt="">
+                                        </div>
+
+                                        <div class="p-4 text-center">
+
+                                            <h3 class="font-semibold text-heading">
+                                                BMW
+                                            </h3>
+
+                                            <p class="mt-2 text-sm text-amber-500">
+                                                <span class="text-text">4.7 (28)</span> ★
+                                            </p>
+
+                                            <div class="mt-2 text-sm text-text">
+                                                <span>$100</span>
+                                                <span>/ يوم</span>
+                                            </div>
+
+                                            <a href="admin-cars.html" class="mt-4 block rounded-xl bg-primary
+                                px-4 py-2.5 text-sm font-semibold
+                                text-white transition hover:bg-primary-hover">
+                                                عرض التفاصيل
+                                            </a>
+
+                                        </div>
+
+                                    </article>
+
+
+                                    <!-- السيارة الثالثة -->
+                                    <article class="overflow-hidden rounded-2xl
+                        border border-gray-200 bg-card-bg">
+
+                                        <div class="flex h-36 items-center
+                            justify-center bg-bg-main text-6xl">
+                                            <img src="../../../dist/assets/images/dashboard/toyotaraize.jpg" alt="">
+                                        </div>
+
+                                        <div class="p-4 text-center">
+
+                                            <h3 class="font-semibold text-heading">
+                                                تويوتا رايز
+                                            </h3>
+
+                                            <p class="mt-2 text-sm text-amber-500">
+                                                <span class="text-text">4.6 (24)</span> ★
+                                            </p>
+
+                                            <div class="mt-2 text-sm text-text">
+                                                <span>$80</span>
+                                                <span>/ يوم</span>
+                                            </div>
+                                            <a href="admin-cars.html" class="mt-4 block rounded-xl bg-primary
+                                px-4 py-2.5 text-sm font-semibold
+                                text-white transition hover:bg-primary-hover">
+                                                عرض التفاصيل
+                                            </a>
+
+                                        </div>
+
+                                    </article>
+
+
+                                    <!-- السيارة الرابعة -->
+                                    <article class="overflow-hidden rounded-2xl
+                        border border-gray-200 bg-card-bg">
+
+                                        <div class="flex h-36 items-center
+                            justify-center bg-bg-main text-6xl">
+                                            <img src="../../../dist/assets/images/dashboard/toyotamotor.jpg" alt="">
+                                        </div>
+
+                                        <div class="p-4 text-center">
+
+                                            <h3 class="font-semibold text-heading">
+                                                تويوتا موتور
+                                            </h3>
+
+                                            <p class="mt-2 text-sm text-amber-500">
+                                                <span class="text-text">4.8 (36)</span> ★
+                                            </p>
+
+                                            <div class="mt-2 text-sm text-text">
+                                                <span>$115</span>
+                                                <span>/ يوم</span>
+                                            </div>
+
+                                            <a href="admin-cars.html" class="mt-4 block rounded-xl bg-primary
+                                px-4 py-2.5 text-sm font-semibold
+                                text-white transition hover:bg-primary-hover">
+                                                عرض التفاصيل
+                                            </a>
+
+                                        </div>
+
+                                    </article>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        // وظيفة التحكم الذكي عند الضغط على زر القائمة
+        toggleBtn.addEventListener('click', () => {
+            if (window.innerWidth >= 768) {
+                // على اللابتوب: انكماش وتمدد مرن للمحتوى بجانب السايدبار
+                sidebar.classList.toggle('md:w-64');
+                sidebar.classList.toggle('md:w-0');
+            } else {
+                // على الموبايل: ظهور السايدبار كطبقة فوقية تغطي المحتوى
+                sidebar.classList.toggle('translate-x-full');
+            }
+        });
+    </script>
+
+    <script>
+        // إعداد الخطوط للمخططات
+        Chart.defaults.font.family = "'IBM Plex Sans Arabic', sans-serif";
+        Chart.defaults.color = "#851717";
+
+        // مخطط الحجوزات خلال آخر 7 أيام
+        new Chart(document.getElementById("bookingsChart"), {
+            type: "line",
+
+            data: {
+                labels: [
+                    "2 نوفمبر",
+                    "3 نوفمبر",
+                    "4 نوفمبر",
+                    "5 نوفمبر",
+                    "6 نوفمبر",
+                    "7 نوفمبر",
+                    "8 نوفمبر"
+                ],
+
+                datasets: [{
+                    label: "الحجوزات",
+
+                    data: [8, 16, 19, 13, 13, 18, 28],
+
+                    borderColor: "#F93A3A",
+                    backgroundColor: "rgba(249, 58, 58, 0.10)",
+
+                    fill: true,
+                    tension: 0.35,
+
+                    pointRadius: 3,
+                    pointHoverRadius: 5,
+                    pointBackgroundColor: "#F93A3A"
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: "#F0E7E7"
+                        },
+                        ticks: {
+                            precision: 0
+                        }
+                    },
+
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+
+        // مخطط حالة الحجوزات
+        const centerTextPlugin = {
+            id: "centerText",
+
+            afterDraw(chart) {
+                const { ctx, chartArea } = chart;
+
+                if (!chartArea) return;
+
+                const x = (chartArea.left + chartArea.right) / 2;
+                const y = (chartArea.top + chartArea.bottom) / 2;
+
+                ctx.save();
+
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                ctx.font = "bold 22px 'IBM Plex Sans Arabic'";
+                ctx.fillStyle = "#480707";
+                ctx.fillText("156", x, y - 8);
+
+                ctx.font = "12px 'IBM Plex Sans Arabic'";
+                ctx.fillStyle = "#851717";
+                ctx.fillText("إجمالي الحجوزات", x, y + 15);
+
+                ctx.restore();
+            }
+        };
+
+        new Chart(document.getElementById("statusChart"), {
+            type: "doughnut",
+            data: {
+                labels: [
+                    "مكتملة",
+                    "نشطة",
+                    "ملغاة",
+                    "قيد المراجعة"
+                ],
+
+                datasets: [{
+                    data: [82, 18, 9, 7],
+
+                    backgroundColor: [
+                        "#69A98B",
+                        "#F07886",
+                        "#B9BEC7",
+                        "#F2C36B"
+                    ],
+
+                    borderWidth: 0
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                cutout: "68%",
+
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            },
+
+            plugins: [centerTextPlugin]
+        });
+    </script>
+    
+
+
+
+
+
+    <script src="../../../dist/js/Darkmode.js"></script>
+    <script src="../../../dist/js/mobile-menu.js"></script>
+</body>
+
+</html>

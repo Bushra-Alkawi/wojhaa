@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم الأدمن </title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="icon" type="image/svg+xml" href="../../../dist/assets/images/image.png">
+
+
+
+  <link rel="stylesheet" href="/dist/assets/css/style.css" />
+  <link rel="stylesheet" href="/dist/assets/css/all.min.css" />
+  <style>
+    /* كلاس مخصص يضمن إخفاء السايدبار تماماً دون أي تضارب في كلاسات Tailwind */
+    .sidebar-hidden {
+      width: 0px !important;
+    }
+
+    body {
+      font-family: "IBM Plex Sans Arabic", sans-serif;
+    }
+
+    .font-heading {
+      font-family: "Alexandria", sans-serif;
+    }
+
+    .car-thumb {
+      width: 112px;
+      height: 70px;
+      object-fit: contain;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border-radius: 9999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .modal-backdrop {
+      background: rgb(0 0 0 / 0.45);
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+
+
+
+<body class="bg-gray-100 font-sans antialiased m-0 p-0">
+
+  <!-- الحاوية الرئيسية: كلاس flex يضمن اصطفاف السايدبار والمحتوى أفقياً (جنباً إلى جنب) -->
+  <div class="flex h-screen w-full overflow-hidden relative">
+    <!-- 1. الشريحة الجانبية (Sidebar) -->
+    <!-- كلاس shrink-0 يمنع المحتوى من ضغط السايدبار وتشويهه -->
+    <div id="sidebar" class="font-heading 
+            absolute md:relative top-0 right-0 h-full bg-heading text-gray-100 w-72 md:w-64 flex flex-col
+            shrink-0 z-40 shadow-2xl md:shadow-none transition-all duration-300 ease-in-out overflow-hidden border-l
+            border-gray-200 translate-x-full md:translate-x-0">
+
+
+      <!-- شعار أو عنوان السايدبار -->
+      <div class="flex justify-start gap-4 py-4 px-4
+             font-semibold text-lg tracking-wide bg-white text-heading
+       whitespace-nowrap shadow-md">
+
+        <img class="w-7  " src="../../../dist/assets/images/logo.png" alt="شعار الموقع" />
+        <p class="font-heading">
+          لوحة التحكم
+        </p>
+
+      </div>
+
+      <div class="py-5">
+        <a href="./homeDashboard.html" class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3
+                 text-white/80 transition 
+                 ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z" />
+          </svg>
+          <span class=""> الرئيسية</span>
+        </a>
+
+        <a href="./MangCars.html"
+          class="bg-primary flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 17h14M6 17v2m12-2v2M4 17h16l-1.5-6h-13L4 17Zm2-6 1.5-3h9L18 11M7 14h.01M17 14h.01" />
+          </svg>
+
+          <span>إدارة السيارات</span>
+        </a>
+        <!-- الحجوزات -->
+        <a href="./ManageBookings.html"
+          class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <rect x="4" y="5" width="16" height="16" rx="2" />
+            <path stroke-linecap="round" d="M8 3v4M16 3v4M4 10h16" />
+          </svg>
+          <span>إدارة الحجوزات</span>
+        </a>
+
+        <!-- المستخدمين -->
+
+        <a href="./ManageUser.html"
+          class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <circle cx="12" cy="8" r="3" />
+            <path stroke-linecap="round" d="M5 20a7 7 0 0 1 14 0" />
+          </svg>
+          <span>إدارة المستخدمين</span>
+        </a>
+
+        <!-- المدفوعات -->
+
+        <a href="./Payments.html"
+          class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <rect x="5" y="3" width="14" height="18" rx="2" />
+            <path stroke-linecap="round" d="M8 8h8M8 12h8M8 16h4" />
+          </svg>
+          <span>إدارة المدفوعات</span>
+        </a>
+        <!-- التقارير -->
+        <a href="./Reports.html"
+          class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+          <span class="text-xl">▥</span>
+          <span>التقارير </span>
+        </a>
+        <!-- الإعدادات -->
+        <a href="./Settings.html"
+          class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.8">
+            <circle cx="12" cy="12" r="3" />
+            <path stroke-linecap="round" d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 1.7-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V20h-2.4v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L7 17l.1-.1A1.7 1.7 0 0 0 7.4 15a1.7 1.7 0 0 0-1.6-1H5.7v-2.4h.1a1.7 1.7 0 0 0 1.6-1A1.7 1.7 0 0 0 7 8.7L6.9 8.6 8.6 7l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V5.7H14v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.7 1.7-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6
+ 1h.1v2.4h-.1a1.7 1.7 0 0 0-1.6.9Z" />
+          </svg>
+          <span class="">الإعدادات</span>
+        </a>
+      </div>
+      </nav>
+
+      <!-- Logout -->
+      <a href="#" id="logout"
+        class="flex mx-2 items-center gap-4 rounded-xl px-4 py-3 text-white/80 transition hover:bg-white/10 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="1.8">
+          <path stroke-linecap="round" d="M10 17l5-5-5-5M15 12H3" />
+          <path stroke-linecap="round" d="M21 19V5a2 2 0 0 0-2-2h-6" />
+        </svg>
+        <span class="">تسجيل الخروج</span>
+      </a>
+
+    </div>
+
+    <!-- 2. منطقة المحتوى الرئيسية (Content) -->
+    <!-- كلاس flex-1 هو المسؤول عن جعل هذه المنطقة تتمدد وتنكمش تلقائياً وتأخذ كل المساحة المتبقية -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-gray-50">
+
+
+      <header class="sticky top-0 left-0 w-full z-50 font-heading bg-card-bg 
+                dark:bg-zinc-900 border-b border-card-tint dark:border-zinc-800 transition-colors duration-300">
+
+        <nav class="w-full sticky top-0 right-0 z-50 bg-white
+     dark:bg-gray-900 shadow-md font-sans transition-colors duration-200" dir="rtl">
+
+          <div class="bg-white dark:bg-gray-900 border-b  md:border-none
+         border-gray-100 dark:border-gray-800 md:px-0 px-5">
+            <div class="h-16 flex justify-between items-center relative">
+
+              <div class="mr-3" id="toggleBtn">
+                <a href="#"><i class="fa-solid far fa-chart-bar text-2xl text-heading" id="sidebar-toggle"></i></a>
+              </div>
+
+              <!-- المنتصف: روابط التنقل الأساسية (تظهر مباشرة على اللابتوب وتختفي في حاوية الموبايل) -->
+              <div class="hidden  md:flex items-center justify-center text-base 
+                 md:text-lg font-heading mr-[10%] " id="navbar-sticky">
+
+                <ul class="flex items-center  gap-10 text-heading
+                     dark:text-white font-medium">
+                  </li>
+                  <li><a href="../../../index.html" class="block text-heading nav-link transition"
+                      aria-current="page">الرئيسية</a></li>
+                  <li><a href="../Services.html" class="block hover:text-heading nav-link transition">خدماتنا</a>
+                  </li>
+
+
+
+                  <li><a href="../Our-Location.html" class="block hover:text-heading nav-link
+                                 transition">مواقعنا</a>
+                  </li>
+                  <li><a href="../work.html" class="block hover:text-heading nav-link transition">كيف
+                      نعمل</a>
+                  </li>
+                  <li><a href="../who.html" class="block hover:text-heading nav-link transition">من
+                      نحن</a></li>
+                  <li><a href="../Contact-us.html" class=" block hover:text-heading nav-link transition">تواصل
+                      معنا</a></li>
+
+                </ul>
+              </div>
+
+              <div class="hidden md:flex md:gap-4 items-center pe-5 space-x-reverse space-x-4">
+                <div class="avatar">
+                  <img class="rounded-full w-10 h-10" src="../../../dist/assets/images/featuress/fqr4(1).jpg" alt="">
+                </div>
+              </div>
+              <div class="md:hidden flex items-center bg-white border border-primary
+                     rounded-md p-0.5 max-w-xs w-[50%] shadow-md" direction="rtl">
+                <input type="text" placeholder="ابحث عن سيارة..."
+                  class="placeholder:font-heading w-full bg-transparent pr-3 pl-2 py-[4px] text-sm
+                             text-heading placeholder-gray-400 outline-none border-none focus:outline-none focus:ring-0 focus:border-transparent" />
+
+                <button type="submit" class="flex items-center justify-center bg-primary hover:bg-primary-hover
+                             text-white rounded-full w-7 h-7 shrink-0 transition-colors duration-200
+                              focus:outline-none focus:ring-0
+                              cursor-pointer">
+                  <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="avatar md:hidden">
+                <img class="rounded-full w-10 h-10" src="../../../dist/assets/images/featuress/fqr4(1).jpg" alt="">
+              </div>
+
+              <button id="menu-toggle"
+                class=" md:hidden p-2 text-heading dark:text-gray-300  focus:outline-none text-2xl">
+                <i class="fas fa-bars" id="menu-icon"></i>
+              </button>
+
+            </div>
+          </div>
+
+
+          <div id="mobile-menu" class="hidden  md:hidden bg-white dark:bg-gray-900 border-t border-gray-100
+             dark:border-gray-800 px-4 py-4 space-y-4 shadow-inner">
+
+            <!-- روابط التنقل للموبايل -->
+            <ul class="flex flex-col font-heading items-center space-y-3 font-medium
+             text-heading dark:text-white text-xl">
+              <li class="border-b-2 border-gray-200   w-[100%] text-center py-2
+                 my-class"><a href="../../index.html" class="block  " aria-current="page">الرئيسية</a>
+              </li>
+
+              <li class="border-b-2 border-gray-200  w-[100%] text-center py-2 my-class"><a href="../Services.html"
+                  class="block transition ">خدماتنا</a></li>
+
+              <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a href="../Our-Location.html"
+                  class="block transition  ">مواقعنا</a></li>
+              <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a href="../work.html"
+                  class="block transition ">كيف نعمل</a></li>
+              <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a href="../who.html"
+                  class="block transition ">من نحن</a></li>
+              <li class="border-b-2 border-gray-200   w-[100%] text-center py-2 my-class"><a href="../Contact-us.html"
+                  class=" block transition ">تواصل معنا</a></li>
+
+            </ul>
+
+          </div>
+
+        </nav>
+
+        <!-- ================= 4. القائمة الجانبية  للجوال  ================= -->
+        <div id="sidebar-overlay"
+          class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-all duration-300">
+        </div>
+
+        <aside id="mobile-sidebar"
+          class="fixed top-0 right-0 h-full w-80 bg-card-bg dark:bg-zinc-900 z-50 translate-x-full transition-transform duration-300 ease-out shadow-2xl border-l border-card-tint dark:border-zinc-800 flex flex-col justify-between p-6 overflow-y-auto">
+          <div class="flex flex-col h-full justify-between gap-4">
+            <div>
+
+              <div class="flex items-center justify-between pb-4 mb-4 border-b border-card-tint dark:border-zinc-800">
+                <a href="../../index.html" class="flex items-center">
+                  <img src="../../dist/assets/images/logo.png" alt="شعار وجهة" class="h-9 w-auto object-contain" />
+                </a>
+                <button id="close-sidebar" type="button" aria-label="إغلاق القائمة"
+                  class="w-8 h-8 rounded-full bg-card-tint dark:bg-zinc-800 text-heading dark:text-white hover:bg-primary hover:text-white transition-all flex items-center justify-center cursor-pointer">
+                  <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+
+              <form action="./cars.html" method="GET" class="mb-4">
+                <div class="relative flex items-center w-full">
+                  <input type="text" name="q" placeholder="ابحث..."
+                    class="w-full pl-8 pr-9 py-2 rounded-xl text-xs
+                                         bg-bg-main dark:bg-zinc-800 text-heading dark:text-zinc-100 border border-card-tint dark:border-zinc-700 outline-none" />
+                  <svg class="w-4 h-4 absolute right-3 text-muted dark:text-zinc-400 fill-none stroke-current stroke-2"
+                    viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </div>
+              </form>
+
+
+              <div
+                class="mb-4 p-3 rounded-2xl bg-bg-main dark:bg-zinc-800 border border-card-tint dark:border-zinc-700 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 fill-current text-primary" viewBox="0 0 24 24">
+                    <path
+                      d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.06-.24c1.12.37 2.33.57 3.53.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.41.57 3.53a1 1 0 01-.24 1.06l-2.21 2.2z" />
+                  </svg>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs text-muted dark:text-zinc-400 font-medium">خدمة العملاء</span>
+                  <a href="tel:+9718001234567" class="text-xs font-bold text-heading dark:text-white dir-ltr">
+                    +971 800 123 4567
+                  </a>
+                </div>
+              </div>
+
+
+              <p class="text-xs font-bold text-muted dark:text-zinc-400 uppercase tracking-wider mb-2 px-1">
+                القائمة الرئيسية
+              </p>
+              <ul class="flex flex-col gap-1.5 max-h-64 overflow-y-auto pr-1">
+                <li>
+                  <a href="../../index.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-card-tint dark:bg-zinc-800 text-primary font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                      </svg>
+                      <span>الرئيسية</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./cars.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                      </svg>
+                      <span>السيارات</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./how-it-works.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z" />
+                      </svg>
+                      <span>كيف تعمل؟</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./about.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                      </svg>
+                      <span>من نحن</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./services.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z" />
+                      </svg>
+                      <span>خدماتنا</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./locations.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                      <span>المواقع</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./blog.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                      </svg>
+                      <span>المدونة</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./booking.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-2-7h-5v5h5v-5z" />
+                      </svg>
+                      <span>الحجز</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="./src/pages/Admin Dashboard/Dashboard.html"
+                    class="flex items-center justify-between p-2.5 rounded-xl text-heading dark:text-zinc-200 hover:bg-card-tint dark:hover:bg-zinc-800 hover:text-primary transition-all font-bold text-xs">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                      </svg>
+                      <span>لوحة التحكم</span>
+                    </div>
+                    <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2 opacity-40" viewBox="0 0 24 24">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+
+            <div class="flex flex-col gap-2 pt-3 border-t border-card-tint dark:border-zinc-800 mt-auto">
+              <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+                <a href="Login.html"
+                  class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                  تسجيل الدخول
+                </a>
+                <a href="signup.html"
+                  class="py-2.5 rounded-full border border-card-tint dark:border-zinc-700 text-heading dark:text-white hover:bg-card-tint dark:hover:bg-zinc-800 transition-colors">
+                  إنشاء حساب
+                </a>
+              </div>
+              <a href="./contact.html"
+                class="w-full py-2.5 text-center rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-xs transition-all shadow-md flex items-center justify-center gap-2">
+                <span>تواصل معنا</span>
+                <svg class="w-3.5 h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <!-- منطقة المحتوى الفعلي داخل الصفحة -->
+      <!-- كلاس overflow-y-auto يضمن ظهور سكرول داخلي هنا فقط إذا كان المحتوى طويلاً -->
+      <main class="p-6 flex-1 overflow-y-auto">
+
+        <!-- شبكة العناصر (Grid) ستتمدد وتتوزع تلقائياً بناءً على عرض الشاشة المتاح -->
+        <div class=" relative">
+          <!-- 3. MAIN  -->
+          <main class="min-h-screen">
+            <!-- الشريط العلوي -->
+            <header
+              class="hidden sticky top-0 z-30 border-b border-gray-100 bg-card-bg/95 px-4 py-4 backdrop-blur sm:px-6 lg:px-8">
+              <div class="flex items-center gap-3">
+                <button id="mobileMenuBtn" type="button"
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 text-heading lg:hidden"
+                  aria-label="فتح القائمة">
+                  ☰
+                </button>
+
+                <div class="flex min-w-0 items-center gap-3">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-card-tint text-xl">
+                    👤
+                  </div>
+                  <div class="leading-tight">
+                    <p class="text-sm font-bold text-heading">مدير النظام</p>
+                    <p class="mt-1 text-xs text-muted">admin</p>
+                  </div>
+                  <span class="hidden text-muted sm:inline">⌄</span>
+                </div>
+
+                <div class="mr-auto flex shrink-0 items-center gap-2">
+                  <button type="button"
+                    class="relative flex h-10 w-10 items-center justify-center rounded-xl text-heading hover:bg-card-tint"
+                    aria-label="الإشعارات">
+                    ♧
+                    <span
+                      class="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] text-white">3</span>
+                  </button>
+                  <button id="fullscreenBtn" type="button"
+                    class="hidden h-10 w-10 items-center justify-center rounded-xl text-heading hover:bg-card-tint sm:flex"
+                    aria-label="ملء الشاشة">
+                    ⛶
+                  </button>
+                </div>
+
+                <label
+                  class="hidden w-full max-w-sm items-center gap-2 rounded-xl border border-gray-200 bg-bg-main px-3 py-2 md:flex">
+                  <input id="topSearch" type="search"
+                    class="w-full min-w-0 bg-transparent text-sm text-heading outline-none placeholder:text-muted"
+                    placeholder="ابحث عن سيارة، حجز، مستخدم..." />
+                  <span class="text-xl text-muted">⌕</span>
+                </label>
+              </div>
+              <label class="mt-3 flex items-center gap-2 rounded-xl border border-gray-200
+           bg-bg-main px-3 py-2 md:hidden">
+                <input id="topSearchMobile" type="search"
+                  class="w-full min-w-0 bg-transparent text-sm outline-none placeholder:text-muted"
+                  placeholder="ابحث عن سيارة أو موديل..." />
+                <span class="text-xl text-muted">⌕</span>
+              </label>
+            </header>
+
+            <div class="mx-auto max-w-[1600px] space-y-6 p-4 sm:p-6 lg:p-8">
+              <!-- العنوان والإضافة -->
+              <section class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h1 class="font-heading text-2xl font-bold text-heading sm:text-3xl">
+                    إدارة السيارات
+                  </h1>
+                  <p class="mt-2 text-base text-muted">
+                    إدارة أسطول السيارات ومراجعة حالتها وأسعارها.
+                  </p>
+                </div>
+                <button id="addCarBtn" type="button"
+                  class="cursor-pointer inline-flex items-center justify-center gap-2 self-start rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus:outline-none focus:ring-4 focus:ring-red-100">
+                  <span class="text-xl leading-none">＋</span> إضافة سيارة جديدة
+                </button>
+              </section>
+
+              <!-- البحث والفلاتر -->
+              <section
+                class="grid grid-cols-1 gap-3 rounded-2xl border border-gray-200 bg-card-bg p-4 shadow-sm md:grid-cols-3">
+                <label class="flex min-w-0 items-center gap-2 rounded-xl border border-gray-200 bg-bg-main px-3 py-3">
+                  <span class="text-lg text-muted">⌕</span>
+                  <input id="searchInput" type="search"
+                    class="w-full min-w-0 bg-transparent text-sm border-none p-0 outline-none focus:ring-0 placeholder:text-muted"
+                    placeholder="ابحث عن سيارة بالاسم أو الموديل" />
+                </label>
+
+                <select id="typeFilter"
+                  class="w-full rounded-xl border border-gray-200 bg-bg-main px-3 py-3 text-sm text-muted outline-none focus:border-primary">
+                  <option value="">كل الفئات</option>
+                  <option value="سيدان">سيدان</option>
+                  <option value="SUV">SUV</option>
+                  <option value="crossover">crossover</option>
+                  <option value="electric">كهربائية</option>
+                  <option value="luxury">فاخرة</option>
+                </select>
+                <select id="statusFilter"
+                  class="w-full rounded-xl border border-gray-200 bg-bg-main px-3 py-3 text-sm text-muted outline-none focus:border-primary">
+                  <option value="">كل الحالات</option>
+                  <option value="متاحة">متاحة</option>
+                  <option value="محجوزة">محجوزة</option>
+                  <option value="قيد الصيانة">قيد الصيانة</option>
+                </select>
+              </section>
+
+              <!-- جدول السيارات -->
+              <section class="overflow-hidden rounded-2xl border border-gray-200 bg-card-bg shadow-sm">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 px-4 py-4 sm:px-6">
+                  <h2 class="font-heading font-bold text-heading">قائمة السيارات</h2>
+                  <p class="text-sm text-muted">
+                    عدد السيارات:
+                    <span id="carCount" class="font-bold text-heading">5</span>
+                  </p>
+                </div>
+
+                <div class="hidden overflow-x-auto lg:block">
+                  <table class="w-full min-w-[900px] text-right">
+                    <thead class="bg-bg-main text-sm text-heading">
+                      <tr>
+                        <th class="whitespace-nowrap px-14 py-5  font-heading">
+                          الصورة
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-5  font-heading">
+                          اسم السيارة
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-5  font-heading">
+                          الموديل
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-5  font-heading">
+                          الفئة
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-5  font-heading font-bold">
+                          السعر اليومي
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-5  font-heading font-bold">
+                          الحالة
+                        </th>
+                        <th class="whitespace-nowrap ps-12 py-5  font-heading  font-bold">
+                          الإجراءات
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody id="carsTableBody" class="divide-y divide-gray-100"></tbody>
+                  </table>
+                </div>
+
+                <!-- بطاقات الجوال والتابلت -->
+                <div id="carsMobileList" class="grid grid-cols-1 gap-3 p-3 sm:grid-cols-2 lg:hidden"></div>
+                <div id="emptyState" class="hidden px-4 py-12 text-center text-sm text-muted">
+                  لا توجد سيارات تطابق البحث أو الفلاتر.
+                </div>
+              </section>
+            </div>
+          </main>
+
+          <!-- نافذة إضافة / تعديل سيارة -->
+          <div id="carModal"
+            class="modal-backdrop fixed inset-0 z-[60] hidden items-center justify-center overflow-y-auto p-4">
+            <form id="carForm" class="my-auto w-full max-w-xl space-y-4 rounded-2xl bg-card-bg p-5 shadow-xl sm:p-7">
+              <div class="flex items-center justify-between gap-3">
+                <h2 id="carModalTitle" class="font-heading text-xl font-bold text-heading">
+                  إضافة سيارة جديدة
+                </h2>
+                <button id="closeCarModal" type="button"
+                  class="cursor-pointer rounded-lg px-2 text-2xl text-muted hover:bg-bg-main" aria-label="إغلاق">
+                  ×
+                </button>
+              </div>
+              <label class="block text-sm font-semibold text-heading">اسم السيارة
+                <input id="carName" required
+                  class="mt-2 w-full rounded-xl border border-gray-200 bg-bg-main p-3 font-normal outline-none focus:border-primary"
+                  placeholder="مثال: تويوتا كامري" />
+              </label>
+              <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label class="block text-sm font-semibold text-heading">الموديل
+                  <input id="carModel" type="number" min="1990" max="2100" required class="mt-2 w-full rounded-xl border border-gray-200 bg-bg-main p-3 font-normal outline-none
+               focus:border-primary text-text" value="2026" />
+                </label>
+                <label class="block text-sm font-semibold text-heading">الفئة
+                  <select id="carType" class="mt-2 w-full rounded-xl border border-gray-200 bg-bg-main p-3 font-normal 
+              outline-none focus:border-primary text-text">
+                    <option value="سيدان">سيدان</option>
+                    <option value="SUV">SUV</option>
+                    <option value="crossover">crossover</option>
+                    <option value="electric">كهربائية</option>
+                    <option value="luxury">فاخرة</option>
+                  </select>
+                </label>
+              </div>
+              <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <label class="block text-sm font-semibold text-heading">السعر اليومي بالدولار
+                  <input id="carPrice" type="number" min="1" required class="mt-2 w-full rounded-xl border border-gray-200 bg-bg-main p-3 font-normal outline-none
+               focus:border-primary text-text" placeholder="300" />
+                </label>
+                <label class="block text-sm font-semibold text-heading">الحالة
+                  <select id="carStatus" class="mt-2 w-full rounded-xl border border-gray-200 bg-bg-main p-3 font-normal
+               outline-none focus:border-primary text-text">
+                    <option value="متاحة">متاحة</option>
+                    <option value="محجوزة">محجوزة</option>
+                    <option value="قيد الصيانة">قيد الصيانة</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex flex-col-reverse gap-3 pt-2 sm:flex-row">
+                <button id="cancelCarModal" type="button" class="flex-1 rounded-xl border border-gray-200 px-4 py-3 font-semibold
+             text-heading hover:bg-bg-main cursor-pointer">
+                  إلغاء
+                </button>
+                <button type="submit" class="flex-1 rounded-xl bg-primary px-4 py-3 font-semibold text-white
+             hover:bg-primary-hover cursor-pointer">
+                  حفظ السيارة
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- نافذة تأكيد العمليات -->
+          <div id="confirmModal" class="modal-backdrop fixed inset-0 z-[70] hidden items-center justify-center p-4">
+            <div class="w-full max-w-md rounded-2xl bg-card-bg p-6 text-center shadow-xl">
+              <div
+                class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-card-tint text-2xl text-primary">
+                !
+              </div>
+              <h2 id="confirmTitle" class="font-heading text-xl font-bold text-heading">
+                تأكيد العملية
+              </h2>
+              <p id="confirmMessage" class="mt-3 text-sm leading-6 text-muted"></p>
+              <div class="mt-6 flex gap-3">
+                <button id="confirmNo" type="button" class="hidden cursor-pointer flex-1 rounded-xl border border-gray-200 
+                  px-4 py-3 font-semibold text-heading hover:bg-bg-main">
+                  تعديل
+                </button>
+                <button id="confirmYes" type="button"
+                  class="cursor-pointer flex-1 rounded-xl bg-primary px-4 py-3 font-semibold text-white hover:bg-primary-hover">
+                  نعم
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+
+    // وظيفة التحكم الذكي عند الضغط على زر القائمة
+    toggleBtn.addEventListener('click', () => {
+      if (window.innerWidth >= 768) {
+        // على اللابتوب: انكماش وتمدد مرن للمحتوى بجانب السايدبار
+        sidebar.classList.toggle('md:w-64');
+        sidebar.classList.toggle('md:w-0');
+      } else {
+        // على الموبايل: ظهور السايدبار كطبقة فوقية تغطي المحتوى
+        sidebar.classList.toggle('translate-x-full');
+      }
+    });
+  </script>
+
+  <script>
+    // بيانات تجريبية للعرض. اربطيها بقاعدة بيانات المشروع عند توفر الـ backend.
+    const cars = [
+      {
+        id: 1,
+        name: "تويوتا كامري",
+        model: "2026",
+        type: "سيدان",
+        price: 100,
+        status: "متاحة",
+        image: "🚘",
+      },
+      {
+        id: 2,
+        name: "هيونداي النترا",
+        model: "2026",
+        type: "سيدان",
+        price: 180,
+        status: "متاحة",
+        image: "🚗",
+      },
+      {
+        id: 3,
+        name: "كيا سبورتاج",
+        model: "2026",
+        type: "SUV",
+        price: 50,
+        status: "متاحة",
+        image: "🚙",
+      },
+      {
+        id: 4,
+        name: "تويوتا لاندكروزر",
+        model: "2024",
+        type: "SUV",
+        price: 60,
+        status: "محجوزة",
+        image: "🚙",
+      },
+      {
+        id: 5,
+        name: "نيسان صني",
+        model: "2023",
+        type: "سيدان",
+        price: 200,
+        status: "قيد الصيانة",
+        image: "🚗",
+      },
+    ];
+
+    const tableBody = document.getElementById("carsTableBody");
+    const mobileList = document.getElementById("carsMobileList");
+    const searchInput = document.getElementById("searchInput");
+    const typeFilter = document.getElementById("typeFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const carModal = document.getElementById("carModal");
+    const confirmModal = document.getElementById("confirmModal");
+    let editingId = null;
+    let pendingAction = null;
+    let pendingId = null;
+    let nextId = 6;
+
+    const statusClasses = {
+      متاحة: "bg-green-100 text-green-800",
+      محجوزة: "bg-rose-100 text-rose-800",
+      "قيد الصيانة": "bg-amber-100 text-amber-800",
+    };
+
+    function escapeHtml(value) {
+      return String(value).replace(
+        /[&<>"']/g,
+        (char) =>
+          ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          })[char],
+      );
+    }
+
+    function getFilteredCars() {
+      const query = searchInput.value.trim().toLocaleLowerCase("ar");
+      const type = typeFilter.value;
+      const status = statusFilter.value;
+      return cars.filter((car) => {
+        const matchesQuery =
+          car.name.toLocaleLowerCase("ar").includes(query) ||
+          String(car.model).includes(query);
+        return (
+          matchesQuery &&
+          (!type || car.type === type) &&
+          (!status || car.status === status)
+        );
+      });
+    }
+
+    function actionButtons(car) {
+      return `
+        <div class="flex items-center gap-2">
+          <button type="button" data-action="edit" data-id="${car.id}" title="تعديل" 
+          aria-label="تعديل ${escapeHtml(car.name)}" class="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-primary hover:bg-rose-100">✎</button>
+          <button type="button" data-action="delete" data-id="${car.id}" title="حذف" aria-label="حذف ${escapeHtml(car.name)}" class="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-primary hover:bg-rose-100">⌫</button>
+          <button type="button" data-action="details" data-id="${car.id}" title="تفاصيل" aria-label="تفاصيل ${escapeHtml(car.name)}" class="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full bg-violet-50 text-violet-700 hover:bg-violet-100">◎</button>
+        </div>`;
+    }
+
+    function renderCars() {
+      const filteredCars = getFilteredCars();
+      tableBody.innerHTML = filteredCars
+        .map(
+          (car) => `
+        <tr class="transition hover:bg-bg-main/70">
+          <td class="px-4 py-3"><div class="flex h-[70px] w-28 items-center justify-center rounded-xl bg-bg-main text-4xl">${car.image}</div></td>
+          <td class="whitespace-nowrap px-4 py-4  text-text font-semibold">${escapeHtml(car.name)}</td>
+          <td class="px-4 py-4">${escapeHtml(car.model)}</td>
+          <td class="px-4 py-4">${escapeHtml(car.type)}</td>
+          <td class="whitespace-nowrap px-4 py-4">${Number(car.price).toLocaleString("ar")} $</td>
+          <td class="px-4 py-4"><span class="status-pill ${statusClasses[car.status] || "bg-gray-100 text-gray-700"}">${escapeHtml(car.status)}</span></td>
+          <td class="px-4 py-4">${actionButtons(car)}</td>
+        </tr>`,
+        )
+        .join("");
+
+      mobileList.innerHTML = filteredCars
+        .map(
+          (car) => `
+        <article class="rounded-xl border border-gray-100 bg-card-bg p-4">
+          <div class="flex items-center gap-3">
+            <div class="flex h-20 w-24 shrink-0 items-center justify-center rounded-xl bg-bg-main text-4xl">${car.image}</div>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-heading">${escapeHtml(car.name)}</h3>
+              <p class="mt-1 text-sm text-muted">${escapeHtml(car.model)} · ${escapeHtml(car.type)}</p>
+              <p class="mt-1 font-semibold text-text">${Number(car.price).toLocaleString("ar")} $ / يوم</p>
+              <span class="status-pill mt-2 ${statusClasses[car.status] || "bg-gray-100 text-gray-700"}">${escapeHtml(car.status)}</span>
+            </div>
+          </div>
+          <div class="mt-4 border-t border-gray-100 pt-3">${actionButtons(car)}</div>
+        </article>`,
+        )
+        .join("");
+
+      document.getElementById("carCount").textContent = filteredCars.length;
+      document
+        .getElementById("emptyState")
+        .classList.toggle("hidden", filteredCars.length !== 0);
+    }
+
+    function openModal(modal) {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+    function closeModal(modal) {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function openCarForm(car = null) {
+      editingId = car ? car.id : null;
+      document.getElementById("carModalTitle").textContent = car
+        ? "تعديل بيانات السيارة"
+        : "إضافة سيارة جديدة";
+      document.getElementById("carName").value = car ? car.name : "";
+      document.getElementById("carModel").value = car ? car.model : "2026";
+      document.getElementById("carType").value = car ? car.type : "سيدان";
+      document.getElementById("carPrice").value = car ? car.price : "";
+      document.getElementById("carStatus").value = car ? car.status : "متاحة";
+      openModal(carModal);
+    }
+
+    document
+      .getElementById("addCarBtn")
+      .addEventListener("click", () => openCarForm());
+    document
+      .getElementById("closeCarModal")
+      .addEventListener("click", () => closeModal(carModal));
+    document
+      .getElementById("cancelCarModal")
+      .addEventListener("click", () => closeModal(carModal));
+
+    document.getElementById("carForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = {
+        name: document.getElementById("carName").value.trim(),
+        model: document.getElementById("carModel").value,
+        type: document.getElementById("carType").value,
+        price: Number(document.getElementById("carPrice").value),
+        status: document.getElementById("carStatus").value,
+        image: "🚗",
+      };
+      if (editingId !== null) {
+        const index = cars.findIndex((car) => car.id === editingId);
+        if (index !== -1) cars[index] = { ...cars[index], ...data };
+      } else {
+        cars.unshift({ id: nextId++, ...data });
+      }
+      closeModal(carModal);
+      renderCars();
+    });
+
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-action]");
+      if (!button) return;
+      const id = Number(button.dataset.id);
+      const car = cars.find((item) => item.id === id);
+      if (!car) return;
+
+      if (button.dataset.action === "edit") {
+        openCarForm(car);
+      } else if (button.dataset.action === "delete") {
+        pendingAction = "delete";
+        pendingId = id;
+        document.getElementById("confirmTitle").textContent =
+          "تأكيد حذف السيارة";
+        document.getElementById("confirmMessage").textContent =
+          `هل أنت متأكد من حذف ${car.name}؟`;
+        document.getElementById("confirmYes").textContent = "حذف";
+        openModal(confirmModal);
+      } else if (button.dataset.action === "details") {
+        pendingAction = "details";
+        pendingId = id;
+        document.getElementById("confirmTitle").textContent =
+          "تفاصيل السيارة";
+        document.getElementById("confirmMessage").textContent =
+          `${car.name} — الموديل ${car.model} — الفئة ${car.type} — السعر اليومي ${car.price} $ — الحالة ${car.status}.`;
+        document.getElementById("confirmYes").textContent = "إغلاق";
+        openModal(confirmModal);
+      }
+    });
+
+    document.getElementById("confirmNo").addEventListener("click", () => {
+      pendingAction = null;
+      pendingId = null;
+      closeModal(confirmModal);
+    });
+
+    document.getElementById("confirmYes").addEventListener("click", () => {
+      if (pendingAction === "delete") {
+        const index = cars.findIndex((car) => car.id === pendingId);
+        if (index !== -1) cars.splice(index, 1);
+        renderCars();
+      } else if (pendingAction === "logout") {
+        window.location.href = "login.html";
+      }
+      pendingAction = null;
+      pendingId = null;
+      closeModal(confirmModal);
+    });
+
+
+
+
+
+    [carModal, confirmModal].forEach((modal) => {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal(modal);
+      });
+    });
+
+    [searchInput, typeFilter, statusFilter].forEach((element) => {
+      element.addEventListener(
+        element.tagName === "INPUT" ? "input" : "change",
+        renderCars,
+      );
+    });
+
+    function syncSearch(source, target) {
+      target.value = source.value;
+      renderCars();
+    }
+    document
+      .getElementById("topSearch")
+      .addEventListener("input", (event) =>
+        syncSearch(event.target, searchInput),
+      );
+    document
+      .getElementById("topSearchMobile")
+      .addEventListener("input", (event) =>
+        syncSearch(event.target, searchInput),
+      );
+
+
+    renderCars();
+  </script>
+
+
+
+
+
+
+  <script src="../../../dist/js/Darkmode.js"></script>
+  <script src="../../../dist/js/mobile-menu.js"></script>
+</body>
+
+</html>

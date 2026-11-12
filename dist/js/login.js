@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("loginForm");
 
-    const emailInput = document.getElementById("email");
+    const emailInput = document.getElementById("email_1");
     const passwordInput = document.getElementById("password");
 
     const errorMsg = document.getElementById("errorMsg");
@@ -189,7 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
 
-            setInterval(() => {arrowIcon.style.transform =
+            setInterval(() => {
+                arrowIcon.style.transform =
                     "translateX(-6px)";
 
                 setTimeout(() => {
@@ -206,15 +207,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    const emailValue_1 = document.getElementById("email_1");
+    const go = document.getElementById("go");
+
+    // 2. إضافة مستمع أحداث يراقب الكتابة داخل الـ input
+    emailValue_1.addEventListener("input", function () {
+        // إذا كان حقل الإدخال فارغاً، يعود للنص الأصلي، وإلا يضع النص المكتوب
+        if (emailValue_1.value.trim() === "huda77@gmail.com") {
+            go.innerText = "اضغط للانتقال إلى الحجز";
+        }
+         else if (emailValue_1.value.trim() === "admin@wajha.com") {
+            go.innerText = "اضغط للانتقال إلى لوحة التحكم";
+        }
+    });
+
+
     // Go to home page
 
     goHome.addEventListener("click", function () {
 
         goHome.style.transform = "scale(0.88)";
 
+
+        const emailValue = document.getElementById('email_1').value.trim().toLowerCase();
+
         setTimeout(() => {
 
-            window.location.href = "../../index.html";
+            if (emailValue === 'huda77@gmail.com') {
+                window.location.href = "../../src/pages/reservation.html";
+            } else if (emailValue === 'admin@wajha.com') {
+                window.location.href = "../../src/pages/AdminDashboard/homeDashboard.html";
+            }
+
 
         }, 180);
 
@@ -249,4 +273,3 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
 
 
- 

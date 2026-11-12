@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Go to home page
         setTimeout(function () {
 
-            window.location.href = "../../index.html";
+            window.location.href = "login.html";
 
         }, 2000);
 

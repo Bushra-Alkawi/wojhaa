@@ -3,7 +3,8 @@
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.never-use-dark-mode));
+
 
 /* حل جذري لكل العناصر */
 *,
